@@ -1,6 +1,6 @@
 # Skincare Product Scraper & Price Analysis
 
-A university project that scrapes product data from international skincare brands
+A project that scrapes product data from international skincare brands
 running on Shopify, cleans it, and analyzes pricing, discounts and product ranges.
 
 ## Brands studied
