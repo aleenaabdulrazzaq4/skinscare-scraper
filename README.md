@@ -1,29 +1,31 @@
-# Skincare Product Scraper & Price Analysis
+# Skincare Customer Review Scraper & Sentiment Analysis
 
-A project that scrapes product data from international skincare brands
-running on Shopify, cleans it, and analyzes pricing, discounts and product ranges.
+A university project that uses **web scraping** to collect customer reviews of
+skincare products from two international brands, then evaluates them with
+**EDA (Exploratory Data Analysis)** and **Sentiment Analysis**.
+
+**Pipeline:** Web scraping → Data cleaning → EDA → Sentiment analysis → Report
 
 ## Brands studied
 
-| Brand | Website | Data source |
-|---|---|---|
-| Glow Recipe | glowrecipe.com | `/products.json` |
-| KraveBeauty | kravebeauty.com | `/products.json` |
-| Summer Fridays | summerfridays.com | `/products.json` |
+| Brand | Website | Products | Reviews |
+|---|---|---|---|
+| Glow Recipe | glowrecipe.com | Shopify `/products.json` | Okendo review feed |
+| KraveBeauty | kravebeauty.com | Shopify `/products.json` | Okendo review feed |
 
 ## Research questions
 
-1. How do average prices differ between the three brands?
-2. Which product categories (cleansers, serums, moisturizers, sets) are most common?
-3. How many products are on sale, and how big are the discounts?
-4. How much does price per ml/g vary across brands and categories?
-5. Which ingredients appear most often in product descriptions?
+1. What is the overall sentiment of customer reviews for each brand?
+2. Does the sentiment of the review text match the star rating?
+3. Which products are most loved, and which get the most complaints?
+4. What words and topics appear most in positive vs negative reviews?
+5. Do ratings differ by skin type (oily, dry, sensitive, combination)?
 
 ## Project structure
 
 ```
 skincare-scraper/
-├── src/              # Python scripts (scraper, cleaning, analysis)
+├── src/              # Python scripts (scrapers, cleaning, sentiment)
 ├── data/
 │   ├── raw/          # Data exactly as scraped
 │   └── processed/    # Cleaned data ready for analysis
@@ -39,14 +41,15 @@ skincare-scraper/
 
 ```bash
 pip install -r requirements.txt
-python src/scraper.py          # coming on Day 2
+python src/scraper.py      # product list
 ```
 
 ## Progress
 
-See [`docs/PROGRESS_LOG.md`](docs/PROGRESS_LOG.md) for what was done each day.
+See [`docs/PROGRESS_LOG.md`](docs/PROGRESS_LOG.md) for what was done each day
+and [`docs/10_DAY_PLAN.md`](docs/10_DAY_PLAN.md) for the full plan.
 
 ## Ethics
 
-Only publicly available product data is collected. The scraper waits between
-requests, identifies itself honestly, and collects no personal information.
+Only publicly visible product data and reviews are collected. Reviewer names
+are not stored. The scraper waits between requests and identifies itself.
