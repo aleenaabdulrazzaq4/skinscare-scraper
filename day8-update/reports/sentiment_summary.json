@@ -1,0 +1,362 @@
+{
+  "sentiment_pct_overall": {
+    "Positive": 91.4,
+    "Neutral": 4.3,
+    "Negative": 4.2
+  },
+  "sentiment_pct_by_brand": {
+    "Glow Recipe": {
+      "Positive": 92.0,
+      "Neutral": 4.5,
+      "Negative": 3.5
+    },
+    "KraveBeauty": {
+      "Positive": 89.3,
+      "Neutral": 3.7,
+      "Negative": 7.0
+    }
+  },
+  "avg_compound_by_brand": {
+    "Glow Recipe": 0.725,
+    "KraveBeauty": 0.674
+  },
+  "avg_compound_by_rating": {
+    "1": 0.015,
+    "2": 0.257,
+    "3": 0.425,
+    "4": 0.704,
+    "5": 0.761
+  },
+  "rating_vs_sentiment_row_pct": {
+    "5": {
+      "Positive": 94.4,
+      "Neutral": 3.9,
+      "Negative": 1.7
+    },
+    "4": {
+      "Positive": 91.8,
+      "Neutral": 3.5,
+      "Negative": 4.8
+    },
+    "3": {
+      "Positive": 72.4,
+      "Neutral": 9.1,
+      "Negative": 18.5
+    },
+    "2": {
+      "Positive": 63.9,
+      "Neutral": 9.9,
+      "Negative": 26.2
+    },
+    "1": {
+      "Positive": 43.9,
+      "Neutral": 11.8,
+      "Negative": 44.3
+    }
+  },
+  "agreement_pct": 88.5,
+  "n_high_stars_negative_text": 188,
+  "n_low_stars_positive_text": 244,
+  "positive_pct_by_skin_type": {
+    "Sensitive": {
+      "positive": 93.3,
+      "count": 1228
+    },
+    "Normal": {
+      "positive": 93.4,
+      "count": 916
+    },
+    "Combination": {
+      "positive": 94.7,
+      "count": 2415
+    },
+    "Dry": {
+      "positive": 94.9,
+      "count": 1259
+    },
+    "Oily": {
+      "positive": 96.4,
+      "count": 584
+    }
+  },
+  "top_positive_words": [
+    [
+      "love",
+      5286
+    ],
+    [
+      "great",
+      2114
+    ],
+    [
+      "moisturizer",
+      1438
+    ],
+    [
+      "good",
+      1427
+    ],
+    [
+      "amazing",
+      1375
+    ],
+    [
+      "serum",
+      1224
+    ],
+    [
+      "dry",
+      983
+    ],
+    [
+      "best",
+      933
+    ],
+    [
+      "perfect",
+      932
+    ],
+    [
+      "makeup",
+      919
+    ],
+    [
+      "nice",
+      881
+    ],
+    [
+      "cream",
+      871
+    ],
+    [
+      "soft",
+      866
+    ],
+    [
+      "smells",
+      841
+    ],
+    [
+      "routine",
+      840
+    ]
+  ],
+  "top_negative_words": [
+    [
+      "smell",
+      93
+    ],
+    [
+      "love",
+      67
+    ],
+    [
+      "dry",
+      52
+    ],
+    [
+      "bottle",
+      49
+    ],
+    [
+      "moisturizer",
+      45
+    ],
+    [
+      "serum",
+      44
+    ],
+    [
+      "bad",
+      44
+    ],
+    [
+      "sensitive",
+      38
+    ],
+    [
+      "without",
+      37
+    ],
+    [
+      "acne",
+      37
+    ],
+    [
+      "packaging",
+      37
+    ],
+    [
+      "oil",
+      34
+    ],
+    [
+      "smells",
+      33
+    ],
+    [
+      "tried",
+      33
+    ],
+    [
+      "disappointed",
+      33
+    ]
+  ],
+  "complaints": {
+    "Irritation / burning": 84,
+    "Smell / fragrance": 78,
+    "Breakouts / acne": 72,
+    "Packaging": 72,
+    "Sticky / greasy feel": 34,
+    "Price / value": 27,
+    "No results": 27,
+    "Drying": 8,
+    "Pilling": 0
+  },
+  "total_negative": 422,
+  "best_products": [
+    {
+      "product": "Glow Recipe x Buldak Glass Balm Lip Duo",
+      "brand_name": "Glow Recipe",
+      "reviews": 25,
+      "avg_rating": 4.76,
+      "avg_sentiment": 0.965,
+      "pct_negative": 0.0
+    },
+    {
+      "product": "Watermelon Glass Skin Essentials Kit",
+      "brand_name": "Glow Recipe",
+      "reviews": 64,
+      "avg_rating": 4.984,
+      "avg_sentiment": 0.935,
+      "pct_negative": 0.0
+    },
+    {
+      "product": "Toner Pad Collection Kit",
+      "brand_name": "Glow Recipe",
+      "reviews": 24,
+      "avg_rating": 5.0,
+      "avg_sentiment": 0.933,
+      "pct_negative": 0.0
+    },
+    {
+      "product": "Best of Glow Hues Kit",
+      "brand_name": "Glow Recipe",
+      "reviews": 50,
+      "avg_rating": 4.96,
+      "avg_sentiment": 0.929,
+      "pct_negative": 2.0
+    },
+    {
+      "product": "Mini Glass Balm Lip Treatment Collection",
+      "brand_name": "Glow Recipe",
+      "reviews": 34,
+      "avg_rating": 4.941,
+      "avg_sentiment": 0.924,
+      "pct_negative": 0.0
+    }
+  ],
+  "worst_products": [
+    {
+      "product": "Oil La La",
+      "brand_name": "KraveBeauty",
+      "reviews": 103,
+      "avg_rating": 4.5,
+      "avg_sentiment": 0.6,
+      "pct_negative": 13.6
+    },
+    {
+      "product": "Great Body Relief",
+      "brand_name": "KraveBeauty",
+      "reviews": 200,
+      "avg_rating": 4.3,
+      "avg_sentiment": 0.6,
+      "pct_negative": 10.5
+    },
+    {
+      "product": "Clear Skin Essentials Kit",
+      "brand_name": "Glow Recipe",
+      "reviews": 72,
+      "avg_rating": 4.6,
+      "avg_sentiment": 0.6,
+      "pct_negative": 9.7
+    },
+    {
+      "product": "Fall Reset Kit",
+      "brand_name": "KraveBeauty",
+      "reviews": 44,
+      "avg_rating": 4.6,
+      "avg_sentiment": 0.7,
+      "pct_negative": 9.1
+    },
+    {
+      "product": "Makeup Re-Wined",
+      "brand_name": "KraveBeauty",
+      "reviews": 155,
+      "avg_rating": 4.5,
+      "avg_sentiment": 0.6,
+      "pct_negative": 9.0
+    }
+  ],
+  "examples_high_stars_negative_text": [
+    {
+      "rating": 5,
+      "compound": -0.97,
+      "product": "Makeup Re-Wined",
+      "text": "Bomb stuff. Lowkey feel bad because I cheated on Makeup Re-Wined and bought a different oil cleanser that everybody raved about on tiktok and SUCKED!! Back to using this baby. Sorry for cheating on you \ud83d\ude1e"
+    },
+    {
+      "rating": 4,
+      "compound": -0.94,
+      "product": "Prickly Pear Peptide Mucin",
+      "text": "Smells? . I have extremely painfully dry skin. I pair this serum with the watermelon glow aha bha toner and other non-glow recipe products and so far it's working well. I have been using this serum for the past 2 months and so far it's working as it's designed to be. \n\nI'm giving it a 4 star because"
+    },
+    {
+      "rating": 4,
+      "compound": -0.92,
+      "product": "Fall Reset Kit",
+      "text": "Love the product but I keep losing the cap. I am a lip gloss/lip balm girlie and always need my lips to be hydrated. The keychain and the ingredients behind this made me want to get it immediately. I bought a pack of 5 because I knew it would be sold out. The only downside I see is the cap. Since it"
+    }
+  ],
+  "examples_low_stars_positive_text": [
+    {
+      "rating": 2,
+      "compound": 1.0,
+      "product": "Plumptuous Lip Jelly Refill",
+      "text": "Good but could be improved. I normally don't write reviews, but I'm writing one because I love the idea of this product, and I wish it could be improved.\n\nThis lip jelly oil did not hit the mark. Each of the reasons why I love the product has a downside to it: \n1. This lip jelly feels nice and is no"
+    },
+    {
+      "rating": 2,
+      "compound": 0.99,
+      "product": "Soothe & Bounce Duo",
+      "text": "Loved the original formula, but the new version is causing eye swelling. I used and loved the original Great Barrier Relief serum for years with zero issues. About a year and a half ago, I repurchased a few bottles to restock and shortly after started experiencing intermittent eye swelling, itching,"
+    },
+    {
+      "rating": 2,
+      "compound": 0.99,
+      "product": "Great Body Relief",
+      "text": "Wanted to love, but not for me. I have very dry, reactive, eczema prone skin. This seemed like a great fit for me, especially with the dryness of winter here. I used this daily after showering for a week. I loved how soft it made my skin feel, but it isn't the most hydrating lotion I've used. It's a"
+    }
+  ],
+  "examples_most_negative": [
+    {
+      "rating": 1,
+      "compound": -0.98,
+      "product": "Oat So Simple Water Cream Refill Pouch",
+      "text": "From the best skin of my life to the most dry and patchy skin of my life!. s. I followed the recommendation to layer it. I have to put on THREE LAYERS and add Great Barrier Relief and Skinfood propolis morning and night not to be in pain. My skin is still dry, especially because I use  Hero Force Sh"
+    },
+    {
+      "rating": 1,
+      "compound": -0.98,
+      "product": "Blueberry Bounce Gentle Cleanser",
+      "text": "Horrible would be zero stars. I placed an order with Glow Recipe and realized immediately afterward that the shipping address had auto-filled to my old address in another state. I reached out to customer service before the order shipped, asking if they could either update the shipping address or can"
+    },
+    {
+      "rating": 1,
+      "compound": -0.97,
+      "product": "Mini Watermelon Glow Pink Juice Moisturizer",
+      "text": "Skin breakout. After getting this as a Christmas present I was so excited to try it but as soon as I put on my face I broke out in a rash all over my face and it started to sting really bad picture 1 is straight after and picture 2 is after shower as I had to shower with the pain I was in. Rash went"
+    }
+  ]
+}
