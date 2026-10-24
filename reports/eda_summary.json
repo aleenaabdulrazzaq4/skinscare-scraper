@@ -1,0 +1,173 @@
+{
+  "total_reviews": 10018,
+  "products_with_reviews": 120,
+  "reviews_per_brand": {
+    "Glow Recipe": 7888,
+    "KraveBeauty": 2130
+  },
+  "products_per_brand": {
+    "Glow Recipe": 97,
+    "KraveBeauty": 23
+  },
+  "avg_rating_overall": 4.67,
+  "avg_rating_per_brand": {
+    "Glow Recipe": 4.72,
+    "KraveBeauty": 4.48
+  },
+  "rating_counts": {
+    "5": 8257,
+    "4": 946,
+    "3": 351,
+    "1": 262,
+    "2": 202
+  },
+  "pct_5_star": 82.4,
+  "pct_1_2_star": 4.6,
+  "rating_by_category": {
+    "Other": {
+      "mean": 4.3,
+      "count": 108
+    },
+    "Eye care": {
+      "mean": 4.32,
+      "count": 200
+    },
+    "Lip care": {
+      "mean": 4.51,
+      "count": 472
+    },
+    "Body care": {
+      "mean": 4.53,
+      "count": 376
+    },
+    "Mask": {
+      "mean": 4.56,
+      "count": 101
+    },
+    "Sunscreen": {
+      "mean": 4.58,
+      "count": 245
+    },
+    "Cleanser": {
+      "mean": 4.67,
+      "count": 954
+    },
+    "Serum / treatment": {
+      "mean": 4.67,
+      "count": 3162
+    },
+    "Set / Kit": {
+      "mean": 4.71,
+      "count": 1616
+    },
+    "Moisturizer": {
+      "mean": 4.71,
+      "count": 1532
+    },
+    "Toner / exfoliant": {
+      "mean": 4.8,
+      "count": 1123
+    },
+    "Accessories / gifts": {
+      "mean": 4.81,
+      "count": 129
+    }
+  },
+  "rating_by_skin_type": {
+    "Normal": {
+      "mean": 4.65,
+      "count": 916
+    },
+    "Combination": {
+      "mean": 4.71,
+      "count": 2415
+    },
+    "Oily": {
+      "mean": 4.74,
+      "count": 584
+    },
+    "Sensitive": {
+      "mean": 4.75,
+      "count": 1228
+    },
+    "Dry": {
+      "mean": 4.77,
+      "count": 1259
+    }
+  },
+  "pct_skin_type_given": 46.9,
+  "pct_verified": 68.0,
+  "median_words_by_rating": {
+    "1": 42.5,
+    "2": 50.5,
+    "3": 47.0,
+    "4": 35.5,
+    "5": 24.0
+  },
+  "lowest_rated_products": [
+    {
+      "product": "Plumptuous Lip Jelly Refill",
+      "brand_name": "KraveBeauty",
+      "mean": 4.16,
+      "count": 150
+    },
+    {
+      "product": "Barrier On-The-Go Mini Kit",
+      "brand_name": "KraveBeauty",
+      "mean": 4.18,
+      "count": 60
+    },
+    {
+      "product": "Guava Vitamin C Dark Spot Serum",
+      "brand_name": "Glow Recipe",
+      "mean": 4.25,
+      "count": 199
+    },
+    {
+      "product": "Clear Skin Barrier",
+      "brand_name": "KraveBeauty",
+      "mean": 4.25,
+      "count": 102
+    },
+    {
+      "product": "Great Body Relief",
+      "brand_name": "KraveBeauty",
+      "mean": 4.3,
+      "count": 200
+    },
+    {
+      "product": "Guava Vitamin C Bright-Eye Gel Cream",
+      "brand_name": "Glow Recipe",
+      "mean": 4.32,
+      "count": 200
+    },
+    {
+      "product": "Strawberry BHA Pore-Smooth Blur Drops",
+      "brand_name": "Glow Recipe",
+      "mean": 4.36,
+      "count": 200
+    },
+    {
+      "product": "Oat So Simple Water Cream Refill Pouch",
+      "brand_name": "KraveBeauty",
+      "mean": 4.37,
+      "count": 172
+    },
+    {
+      "product": "24 Carrot Retinal",
+      "brand_name": "KraveBeauty",
+      "mean": 4.47,
+      "count": 77
+    },
+    {
+      "product": "Oil La La",
+      "brand_name": "KraveBeauty",
+      "mean": 4.49,
+      "count": 103
+    }
+  ],
+  "date_range": [
+    "2019-07-23",
+    "2026-10-24"
+  ]
+}

@@ -119,3 +119,25 @@
 
 **Next**
 - Day 7: EDA.
+
+## Day 7 — EDA (Exploratory Data Analysis)
+
+**What I did**
+- Wrote src/eda.py and src/style.py (shared chart colours: one colour per brand).
+- Made 7 charts in reports/figures/eda_*.png and saved key numbers to reports/eda_summary.json.
+
+**What I found**
+- Average rating 4.67 (Glow Recipe 4.72, KraveBeauty 4.48); 82.4% are 5 stars, 4.6% are 1-2 stars.
+- KraveBeauty has more low ratings (8% are 1-2 stars vs 4% for Glow Recipe).
+- Best skincare category: toners/exfoliants (4.80); lowest: eye care (4.32), where
+  19 of 34 low reviews mention the pump.
+- Skin type barely matters: every skin type averages between 4.65 and 4.77.
+- Unhappy customers write more: median 50 words for 2-star reviews vs 24 for 5-star.
+- 7 of the 10 lowest-rated products are KraveBeauty's.
+
+**What I learned**
+- Comparing percentages instead of counts is fairer when one brand has 4x more reviews.
+- A chart where every bar is the same (all capped at 200) tells you nothing, so I replaced it.
+
+**Next**
+- Day 8: sentiment analysis.
