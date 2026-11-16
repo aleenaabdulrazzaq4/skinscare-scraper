@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Audience Behaviour Discovery – Lawn Suit Campaigns</title>
+<style>
+  :root { color-scheme: light; --ink:#1d2433; --muted:#667085; --line:#e4e7ec; --bg:#f6f7f9; --card:#fff; --accent:#1f4e79; }
+  * { box-sizing: border-box; }
+  body { margin:0; font:15px/1.5 -apple-system,"Segoe UI",Roboto,Arial,sans-serif; color:var(--ink); background:var(--bg); }
+  header { background:var(--accent); color:#fff; padding:22px 28px; }
+  header h1 { margin:0 0 4px; font-size:22px; }
+  header p { margin:0; opacity:.85; font-size:14px; }
+  .wrap { max-width:1180px; margin:0 auto; padding:0 20px 60px; }
+  .banner { background:#fff7e6; border:1px solid #f5d98b; color:#7a5b00; padding:10px 14px; border-radius:8px; margin:18px 0; font-size:13.5px; }
+  form.filters { display:flex; flex-wrap:wrap; gap:12px; align-items:end; background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px; margin-bottom:14px; }
+  form.filters label { font-size:12px; color:var(--muted); display:block; margin-bottom:3px; }
+  select, button, textarea { font:inherit; padding:7px 10px; border:1px solid #cbd2dc; border-radius:7px; background:#fff; color:var(--ink); }
+  button { background:var(--accent); color:#fff; border-color:var(--accent); cursor:pointer; }
+  .kpis { display:flex; gap:12px; flex-wrap:wrap; margin-bottom:6px; }
+  .kpi { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:10px 16px; min-width:150px; }
+  .kpi b { display:block; font-size:22px; } .kpi span { color:var(--muted); font-size:12.5px; }
+  nav { position:sticky; top:0; z-index:5; background:var(--bg); padding:10px 0; display:flex; gap:8px; flex-wrap:wrap; border-bottom:1px solid var(--line); margin-bottom:6px; }
+  nav a { text-decoration:none; color:var(--accent); background:#fff; border:1px solid var(--line); padding:6px 12px; border-radius:20px; font-size:13.5px; }
+  section { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px 22px; margin-top:18px; }
+  section h2 { margin:0 0 2px; font-size:19px; } section .q { color:var(--muted); margin:0 0 14px; font-size:13.5px; }
+  h3 { font-size:15px; margin:20px 0 8px; }
+  table { border-collapse:collapse; width:100%; font-size:13.5px; }
+  th, td { padding:7px 9px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+  th { color:var(--muted); font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:.03em; }
+  td.num, th.num { text-align:right; font-variant-numeric:tabular-nums; }
+  .scroll { overflow-x:auto; }
+  .bar { height:9px; background:#e8edf3; border-radius:5px; position:relative; min-width:90px; }
+  .bar i { position:absolute; left:0; top:0; bottom:0; background:var(--accent); border-radius:5px; }
+  .badge { display:inline-block; padding:2px 9px; border-radius:12px; font-size:12px; font-weight:600; white-space:nowrap; }
+  .Star { background:#d9f2e3; color:#136c3a; } .Awareness-only { background:#e3ecfb; color:#1d4fa3; }
+  .Hidden-converter { background:#fff0d6; color:#8a5200; } .Rethink { background:#fde4e4; color:#a12626; }
+  .viral { background:#d9f2e3; color:#136c3a; } .flop { background:#fde4e4; color:#a12626; }
+  .complaint_storm { background:#ffe3cf; color:#a34100; } .spam_bot { background:#ece4f7; color:#5b2e91; } .comment_surge { background:#e3ecfb; color:#1d4fa3; }
+  .High { background:#fde4e4; color:#a12626; } .Medium { background:#fff0d6; color:#8a5200; } .Low { background:#e8edf3; color:#475467; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(330px,1fr)); gap:14px; }
+  .card { border:1px solid var(--line); border-radius:10px; padding:13px 15px; background:#fff; }
+  .card h4 { margin:0 0 4px; font-size:15px; display:flex; justify-content:space-between; gap:8px; align-items:center; }
+  .muted { color:var(--muted); font-size:12.5px; }
+  .ex { font-size:13px; background:#f3f5f8; border-radius:6px; padding:3px 8px; margin:4px 0 0; display:block; }
+  .rec { border-left:4px solid var(--accent); padding:10px 14px; margin-bottom:12px; background:#fafbfc; border-radius:0 8px 8px 0; }
+  .rec h4 { margin:0 0 6px; font-size:15px; } .rec p { margin:3px 0; font-size:13.5px; }
+  .tabs3 { display:grid; grid-template-columns:1fr; gap:6px; }
+  .note { font-size:12.5px; color:var(--muted); margin-top:6px; }
+  td.heat { text-align:right; font-variant-numeric:tabular-nums; }
+  #out { margin-top:10px; font-size:14px; }
+  textarea { width:100%; max-width:520px; }
+  [dir=rtl] { unicode-bidi:plaintext; }
+  footer { color:var(--muted); font-size:12.5px; margin-top:28px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Audience Behaviour Discovery</h1>
+  <p>Women's lawn-suit campaigns on Instagram, TikTok and Facebook · 11.11 / 12.12 / Eid collections</p>
+</header>
+<div class="wrap">
+  <div class="banner"><b>Simulated data.</b> Every post and comment here was generated for this class project (Brand A–E are fictional). The method is real; the numbers are not measurements of any actual brand.</div>
+
+  
+
+  <div class="kpis">
+    <div class="kpi"><b>3,000</b><span>posts analysed</span></div>
+    <div class="kpi"><b>22,669</b><span>comments analysed</span></div>
+    <div class="kpi"><b>11</b><span>audience needs found</span></div>
+    <div class="kpi"><b>124</b><span>unusual posts</span></div>
+    <div class="kpi"><b>48%</b><span>comments with buying signals</span></div>
+  </div>
+
+  <nav>
+    <a href="#q1">1 · Content</a><a href="#q2">2 · Audience wants</a><a href="#q3">3 · Unusual posts</a>
+    <a href="#q4">4 · Needs by campaign</a><a href="#q5">5 · What to do next</a><a href="#trust">How reliable?</a>
+  </nav>
+
+  <!-- ===================== Q1 ===================== -->
+  <section id="q1">
+    <h2>1 · Which content attracts attention?</h2>
+    <p class="q">Engagement index = (likes + 2×comments + 3×shares) relative to a typical post of the same brand and platform (1.00 = typical). Only posts at least 7 days old are compared. Bars show the median with a 90% interval.</p>
+    <div class="scroll"><table>
+      <tr><th>Content type</th><th class="num">Posts</th><th style="width:230px">Engagement index</th><th class="num">Eng. rate (views)</th><th class="num">Shares per like</th><th class="num">Comments / 1k likes</th><th class="num">Buying-signal comments</th><th>Role</th></tr>
+      
+      <tr><td><b>Eid Campaign</b></td><td class="num">229</td>
+        <td><div class="bar"><i style="width:76.81721733858745%"></i></div>
+            <span class="muted">1.54 &nbsp;(1.43–1.60)</span></td>
+        <td class="num">4.8%</td><td class="num">0.09</td>
+        <td class="num">99</td><td class="num">56%</td>
+        <td><span class="badge Star">Star</span></td></tr>
+      
+      <tr><td><b>Reel</b></td><td class="num">750</td>
+        <td><div class="bar"><i style="width:68.24790136715507%"></i></div>
+            <span class="muted">1.36 &nbsp;(1.26–1.44)</span></td>
+        <td class="num">4.3%</td><td class="num">0.12</td>
+        <td class="num">89</td><td class="num">39%</td>
+        <td><span class="badge Awareness-only">Awareness only</span></td></tr>
+      
+      <tr><td><b>Influencer Post</b></td><td class="num">486</td>
+        <td><div class="bar"><i style="width:53.69639990850774%"></i></div>
+            <span class="muted">1.07 &nbsp;(1.02–1.14)</span></td>
+        <td class="num">3.9%</td><td class="num">0.11</td>
+        <td class="num">181</td><td class="num">42%</td>
+        <td><span class="badge Awareness-only">Awareness only</span></td></tr>
+      
+      <tr><td><b>Styling Video</b></td><td class="num">423</td>
+        <td><div class="bar"><i style="width:53.68547099521022%"></i></div>
+            <span class="muted">1.07 &nbsp;(1.04–1.14)</span></td>
+        <td class="num">5.1%</td><td class="num">0.22</td>
+        <td class="num">69</td><td class="num">42%</td>
+        <td><span class="badge Awareness-only">Awareness only</span></td></tr>
+      
+      <tr><td><b>Product Photo</b></td><td class="num">435</td>
+        <td><div class="bar"><i style="width:34.37908496732026%"></i></div>
+            <span class="muted">0.69 &nbsp;(0.66–0.72)</span></td>
+        <td class="num">5.6%</td><td class="num">0.03</td>
+        <td class="num">57</td><td class="num">49%</td>
+        <td><span class="badge Hidden-converter">Hidden converter</span></td></tr>
+      
+      <tr><td><b>Sale Announcement</b></td><td class="num">486</td>
+        <td><div class="bar"><i style="width:31.774282678777034%"></i></div>
+            <span class="muted">0.64 &nbsp;(0.60–0.69)</span></td>
+        <td class="num">3.1%</td><td class="num">0.05</td>
+        <td class="num">399</td><td class="num">67%</td>
+        <td><span class="badge Hidden-converter">Hidden converter</span></td></tr>
+      
+    </table></div>
+    <p class="note"><b>Star</b> = high attention and high buying signals · <b>Awareness only</b> = attention but few buying signals · <b>Hidden converter</b> = less attention, many buying signals · <b>Rethink</b> = low on both.</p>
+
+    <h3>Engagement index by platform and content type</h3>
+    <div class="scroll"><table>
+      <tr><th>Content type</th><th class="num">Facebook</th><th class="num">Instagram</th><th class="num">TikTok</th></tr>
+      
+      <tr><td>Reel</td>
+        
+        <td class="heat" style="background:rgba(234,120,40,0.35)">1.57 <span class="muted">n=172</span></td>
+        
+        <td class="heat" style="background:rgba(234,120,40,0.16)">1.26 <span class="muted">n=309</span></td>
+        
+        <td class="heat" style="background:rgba(234,120,40,0.18)">1.29 <span class="muted">n=269</span></td>
+        </tr>
+      
+      <tr><td>Styling Video</td>
+        
+        <td class="heat" style="background:rgba(234,120,40,0.14)">1.22 <span class="muted">n=96</span></td>
+        
+        <td class="heat" style="background:rgba(234,120,40,0.05)">1.07 <span class="muted">n=178</span></td>
+        
+        <td class="heat" style="background:rgba(234,120,40,0.02)">1.03 <span class="muted">n=149</span></td>
+        </tr>
+      
+      <tr><td>Influencer Post</td>
+        
+        <td class="heat" style="background:rgba(234,120,40,0.14)">1.23 <span class="muted">n=117</span></td>
+        
+        <td class="heat" style="background:rgba(234,120,40,0.08)">1.13 <span class="muted">n=195</span></td>
+        
+        <td class="heat" style="background:rgba(60,120,200,0.04)">0.95 <span class="muted">n=174</span></td>
+        </tr>
+      
+      <tr><td>Product Photo</td>
+        
+        <td class="heat" style="background:rgba(60,120,200,0.28)">0.66 <span class="muted">n=166</span></td>
+        
+        <td class="heat" style="background:rgba(60,120,200,0.24)">0.71 <span class="muted">n=269</span></td>
+        
+        <td class="heat" style="background:transparent">–</td>
+        </tr>
+      
+      <tr><td>Sale Announcement</td>
+        
+        <td class="heat" style="background:rgba(60,120,200,0.22)">0.73 <span class="muted">n=127</span></td>
+        
+        <td class="heat" style="background:rgba(60,120,200,0.29)">0.66 <span class="muted">n=198</span></td>
+        
+        <td class="heat" style="background:rgba(60,120,200,0.36)">0.56 <span class="muted">n=161</span></td>
+        </tr>
+      
+      <tr><td>Eid Campaign</td>
+        
+        <td class="heat" style="background:rgba(234,120,40,0.49)">1.78 <span class="muted">n=48</span></td>
+        
+        <td class="heat" style="background:rgba(234,120,40,0.35)">1.56 <span class="muted">n=113</span></td>
+        
+        <td class="heat" style="background:rgba(234,120,40,0.17)">1.27 <span class="muted">n=68</span></td>
+        </tr>
+      
+    </table></div>
+  </section>
+
+  <!-- ===================== Q2 ===================== -->
+  <section id="q2">
+    <h2>2 · What does the audience want?</h2>
+    <p class="q">Comments in English, Roman Urdu and Urdu script were grouped automatically by meaning (no labels used). Each group is named from the words and phrases that define it.</p>
+    <div class="grid">
+    
+      <div class="card">
+        <h4>Fans &amp; praise <span class="badge Low">No intent</span></h4>
+        <div class="bar"><i style="width:83.2708397664946%"></i></div>
+        <div class="muted">25.0% of comments · 5,663
+          · Roman Urdu 48%, English 37%, Urdu 16%</div>
+        <div class="muted" style="margin-top:4px">Key words: بہت, خوبصورت, زبردست, کلیکشن, پیارا, ماشاءاللہ</div>
+        <span class="ex" dir="auto">Vrey beautiful dress!</span><span class="ex" dir="auto">Boht pyara collectionh e 🙏</span><span class="ex" dir="auto">بہت خوبصورت!</span>
+      </div>
+    
+      <div class="card">
+        <h4>Price enquiries <span class="badge Medium">Possible inquiry</span></h4>
+        <div class="bar"><i style="width:37.93727116326261%"></i></div>
+        <div class="muted">11.4% of comments · 2,580
+          · Roman Urdu 44%, English 41%, Urdu 15%</div>
+        <div class="muted" style="margin-top:4px">Key words: price, ka, the, rate, list, suit</div>
+        <span class="ex" dir="auto">price pleaes?</span><span class="ex" dir="auto">Price bateain</span><span class="ex" dir="auto">قیمت کیا ہے؟</span>
+      </div>
+    
+      <div class="card">
+        <h4>Availability / stock <span class="badge Medium">Possible inquiry</span></h4>
+        <div class="bar"><i style="width:37.83434058258709%"></i></div>
+        <div class="muted">11.4% of comments · 2,573
+          · Roman Urdu 49%, English 41%, Urdu 11%</div>
+        <div class="muted" style="margin-top:4px">Key words: available, is, online, this, in, are</div>
+        <span class="ex" dir="auto">Ist his available online?</span><span class="ex" dir="auto">Faisalabad main available hia?</span><span class="ex" dir="auto">اسٹاک میں ہے؟ ❤️😍</span>
+      </div>
+    
+      <div class="card">
+        <h4>Discount seekers <span class="badge Medium">Possible inquiry</span></h4>
+        <div class="bar"><i style="width:32.4231329127884%"></i></div>
+        <div class="muted">9.7% of comments · 2,205
+          · Roman Urdu 45%, English 39%, Urdu 15%</div>
+        <div class="muted" style="margin-top:4px">Key words: discount, code, sale, on, milega, promo</div>
+        <span class="ex" dir="auto">plaese give a discount code 😊💕</span><span class="ex" dir="auto">discount code dai npls</span><span class="ex" dir="auto">کوئی ڈسکاؤنٹ ملے گا؟</span>
+      </div>
+    
+      <div class="card">
+        <h4>Delivery complaints <span class="badge Low">Service issue</span></h4>
+        <div class="bar"><i style="width:30.276295087270427%"></i></div>
+        <div class="muted">9.1% of comments · 2,059
+          · Roman Urdu 51%, English 37%, Urdu 12%</div>
+        <div class="muted" style="margin-top:4px">Key words: nahi, tak, abhi, order, late, tracking</div>
+        <span class="ex" dir="auto">Worst delivery sevrice, very late</span><span class="ex" dir="auto">Order abhi takr eceive nahi hua</span><span class="ex" dir="auto">14 دن پہلے آرڈر کیا تھا ابھی تک انتظار ہے</span>
+      </div>
+    
+      <div class="card">
+        <h4>Fabric &amp; quality <span class="badge Low">Product feedback</span></h4>
+        <div class="bar"><i style="width:29.114649962503858%"></i></div>
+        <div class="muted">8.7% of comments · 1,980
+          · Roman Urdu 52%, English 40%, Urdu 8%</div>
+        <div class="muted" style="margin-top:4px">Key words: quality, kapra, cheap, maine, wash, hisab</div>
+        <span class="ex" dir="auto">Fabric quality has gone dwon</span><span class="ex" dir="auto">Quality bohat khraab hai ab ✨</span><span class="ex" dir="auto">رنگ دھلنے پر اتر گیا</span>
+      </div>
+    
+      <div class="card">
+        <h4>Delivery enquiries <span class="badge Medium">Possible inquiry</span></h4>
+        <div class="bar"><i style="width:18.20400841089888%"></i></div>
+        <div class="muted">5.5% of comments · 1,238
+          · Roman Urdu 47%, English 30%, Urdu 24%</div>
+        <div class="muted" style="margin-top:4px">Key words: delivery, kitne, charges, din, ڈیلیوری, mein</div>
+        <span class="ex" dir="auto">DELIVERY CHARGES T OISLAMABAD? 🙄🔥</span><span class="ex" dir="auto">Peshawar main delivery hoti he?</span><span class="ex" dir="auto">ڈیلیوری کتنے دن میں ہوگی؟ 😭</span>
+      </div>
+    
+      <div class="card">
+        <h4>Ready to buy <span class="badge High">High intent</span></h4>
+        <div class="bar"><i style="width:18.159895304895084%"></i></div>
+        <div class="muted">5.4% of comments · 1,235
+          · English 42%, Roman Urdu 39%, Urdu 19%</div>
+        <div class="muted" style="margin-top:4px">Key words: kar, cart, details, dm, inbox, me</div>
+        <span class="ex" dir="auto">ordering tihs today 🔥</span><span class="ex" dir="auto">2 sutis book kar dein</span><span class="ex" dir="auto">میں نے آرڈر کر دیا</span>
+      </div>
+    
+      <div class="card">
+        <h4>Price complaints <span class="badge Low">Service issue</span></h4>
+        <div class="bar"><i style="width:17.439381240166455%"></i></div>
+        <div class="muted">5.2% of comments · 1,186
+          · English 48%, Roman Urdu 36%, Urdu 16%</div>
+        <div class="muted" style="margin-top:4px">Key words: mehnga, expensive, to, where, no, support</div>
+        <span class="ex" dir="auto">not wortht his price</span><span class="ex" dir="auto">ye price to ghalat hai 😡</span><span class="ex" dir="auto">اتنا مہنگا کیوں ہے؟</span>
+      </div>
+    
+      <div class="card">
+        <h4>Size &amp; fit <span class="badge Medium">Possible inquiry</span></h4>
+        <div class="bar"><i style="width:16.013057479377125%"></i></div>
+        <div class="muted">4.8% of comments · 1,089
+          · Roman Urdu 42%, English 39%, Urdu 20%</div>
+        <div class="muted" style="margin-top:4px">Key words: size, chart, shrink, stitched, length, wash</div>
+        <span class="ex" dir="auto">Size char tplease</span><span class="ex" dir="auto">stitched amin kaun se size hain? 💕</span><span class="ex" dir="auto">ایکس ایل سائز مل جائے گا؟</span>
+      </div>
+    
+      <div class="card">
+        <h4>Spam / promotion <span class="badge Low">Spam</span></h4>
+        <div class="bar"><i style="width:12.6604614230888%"></i></div>
+        <div class="muted">3.8% of comments · 861
+          · Roman Urdu 51%, English 42%, Urdu 8%</div>
+        <div class="muted" style="margin-top:4px">Key words: karein, fre, liye, message, link, click</div>
+        <span class="ex" dir="auto">Follow me for free giveaway 💕✨</span><span class="ex" dir="auto">FREEG IVEAWAY KE LIYE FOLLOW KAREIN</span><span class="ex" dir="auto">فری گفٹ کے لیے فالو کریں</span>
+      </div>
+    
+    </div>
+  </section>
+
+  <!-- ===================== Q3 ===================== -->
+  <section id="q3">
+    <h2>3 · Which marketing patterns are unusual?</h2>
+    <p class="q">Every post is compared with what comparable posts (same brand, platform, format, campaign and age) normally get. Posts far outside that range, or with an unusual comment mix, are listed for investigation.</p>
+    <p><span class="badge viral">Viral: 34</span> <span class="badge spam_bot">Spam flood: 31</span> <span class="badge flop">Flop: 30</span> <span class="badge complaint_storm">Complaint storm: 29</span> </p>
+    <div class="scroll"><table>
+      <tr><th>Post</th><th>Brand</th><th>Platform</th><th>Content</th><th>Campaign</th><th>Type</th><th>Why it was flagged</th></tr>
+      
+      <tr><td>P1079</td><td>Brand B</td><td>Instagram</td><td>Reel</td><td>12.12 Sale</td>
+          <td><span class="badge spam_bot">Spam flood</span></td><td>100% of sampled comments are spam or promotion (comparable posts: 2%), with 1,953 comments in total.</td></tr>
+      
+      <tr><td>P1494</td><td>Brand A</td><td>Facebook</td><td>Eid Campaign</td><td>Eid Collection</td>
+          <td><span class="badge spam_bot">Spam flood</span></td><td>100% of sampled comments are spam or promotion (comparable posts: 2%), with 3,152 comments in total.</td></tr>
+      
+      <tr><td>P2709</td><td>Brand D</td><td>TikTok</td><td>Styling Video</td><td>Eid Collection</td>
+          <td><span class="badge spam_bot">Spam flood</span></td><td>100% of sampled comments are spam or promotion (comparable posts: 2%), with 6,304 comments in total.</td></tr>
+      
+      <tr><td>P0071</td><td>Brand A</td><td>TikTok</td><td>Reel</td><td>Summer Lawn</td>
+          <td><span class="badge spam_bot">Spam flood</span></td><td>93% of sampled comments are spam or promotion (comparable posts: 2%), with 8,771 comments in total.</td></tr>
+      
+      <tr><td>P2991</td><td>Brand E</td><td>Instagram</td><td>Sale Announcement</td><td>Summer Lawn</td>
+          <td><span class="badge spam_bot">Spam flood</span></td><td>93% of sampled comments are spam or promotion (comparable posts: 2%), with 2,429 comments in total.</td></tr>
+      
+      <tr><td>P2389</td><td>Brand A</td><td>Facebook</td><td>Product Photo</td><td>12.12 Sale</td>
+          <td><span class="badge spam_bot">Spam flood</span></td><td>93% of sampled comments are spam or promotion (comparable posts: 2%), with 1,681 comments in total.</td></tr>
+      
+      <tr><td>P2441</td><td>Brand D</td><td>Instagram</td><td>Product Photo</td><td>Summer Lawn</td>
+          <td><span class="badge spam_bot">Spam flood</span></td><td>100% of sampled comments are spam or promotion (comparable posts: 2%), with 480 comments in total.</td></tr>
+      
+      <tr><td>P0650</td><td>Brand D</td><td>TikTok</td><td>Influencer Post</td><td>Summer Lawn</td>
+          <td><span class="badge complaint_storm">Complaint storm</span></td><td>87% of sampled comments are delivery/price complaints; comparable posts normally have about 2%.</td></tr>
+      
+      <tr><td>P0579</td><td>Brand B</td><td>Facebook</td><td>Eid Campaign</td><td>Eid Collection</td>
+          <td><span class="badge spam_bot">Spam flood</span></td><td>92% of sampled comments are spam or promotion (comparable posts: 2%), with 1,329 comments in total.</td></tr>
+      
+      <tr><td>P1287</td><td>Brand D</td><td>TikTok</td><td>Reel</td><td>12.12 Sale</td>
+          <td><span class="badge spam_bot">Spam flood</span></td><td>100% of sampled comments are spam or promotion (comparable posts: 2%), with 8,986 comments in total.</td></tr>
+      
+      <tr><td>P1517</td><td>Brand B</td><td>Instagram</td><td>Sale Announcement</td><td>Summer Lawn</td>
+          <td><span class="badge spam_bot">Spam flood</span></td><td>100% of sampled comments are spam or promotion (comparable posts: 2%), with 4,249 comments in total.</td></tr>
+      
+      <tr><td>P0398</td><td>Brand E</td><td>Instagram</td><td>Reel</td><td>Summer Lawn</td>
+          <td><span class="badge spam_bot">Spam flood</span></td><td>100% of sampled comments are spam or promotion (comparable posts: 2%), with 2,680 comments in total.</td></tr>
+      
+      <tr><td>P2046</td><td>Brand B</td><td>Instagram</td><td>Product Photo</td><td>11.11 Sale</td>
+          <td><span class="badge spam_bot">Spam flood</span></td><td>100% of sampled comments are spam or promotion (comparable posts: 2%), with 1,647 comments in total.</td></tr>
+      
+      <tr><td>P2207</td><td>Brand D</td><td>Instagram</td><td>Influencer Post</td><td>Eid Collection</td>
+          <td><span class="badge complaint_storm">Complaint storm</span></td><td>93% of sampled comments are delivery/price complaints; comparable posts normally have about 3%.</td></tr>
+      
+      <tr><td>P0956</td><td>Brand E</td><td>TikTok</td><td>Sale Announcement</td><td>Summer Lawn</td>
+          <td><span class="badge complaint_storm">Complaint storm</span></td><td>100% of sampled comments are delivery/price complaints; comparable posts normally have about 3%.</td></tr>
+      
+      <tr><td>P0820</td><td>Brand A</td><td>Instagram</td><td>Eid Campaign</td><td>Eid Collection</td>
+          <td><span class="badge spam_bot">Spam flood</span></td><td>85% of sampled comments are spam or promotion (comparable posts: 2%), with 4,858 comments in total.</td></tr>
+      
+      <tr><td>P0207</td><td>Brand A</td><td>Facebook</td><td>Product Photo</td><td>Winter Collection</td>
+          <td><span class="badge spam_bot">Spam flood</span></td><td>90% of sampled comments are spam or promotion (comparable posts: 2%), with 2,223 comments in total.</td></tr>
+      
+      <tr><td>P2672</td><td>Brand B</td><td>Instagram</td><td>Product Photo</td><td>Winter Collection</td>
+          <td><span class="badge spam_bot">Spam flood</span></td><td>90% of sampled comments are spam or promotion (comparable posts: 2%), with 866 comments in total.</td></tr>
+      
+      <tr><td>P0518</td><td>Brand B</td><td>Instagram</td><td>Sale Announcement</td><td>Eid Collection</td>
+          <td><span class="badge spam_bot">Spam flood</span></td><td>100% of sampled comments are spam or promotion (comparable posts: 2%), with 9,070 comments in total.</td></tr>
+      
+      <tr><td>P0242</td><td>Brand A</td><td>Instagram</td><td>Eid Campaign</td><td>Eid Collection</td>
+          <td><span class="badge spam_bot">Spam flood</span></td><td>73% of sampled comments are spam or promotion (comparable posts: 2%), with 3,094 comments in total.</td></tr>
+      
+      <tr><td>P2085</td><td>Brand C</td><td>Facebook</td><td>Sale Announcement</td><td>Summer Lawn</td>
+          <td><span class="badge spam_bot">Spam flood</span></td><td>82% of sampled comments are spam or promotion (comparable posts: 2%), with 8,178 comments in total.</td></tr>
+      
+      <tr><td>P1294</td><td>Brand E</td><td>Facebook</td><td>Sale Announcement</td><td>Summer Lawn</td>
+          <td><span class="badge spam_bot">Spam flood</span></td><td>71% of sampled comments are spam or promotion (comparable posts: 2%), with 4,411 comments in total.</td></tr>
+      
+      <tr><td>P2584</td><td>Brand D</td><td>Instagram</td><td>Reel</td><td>Summer Lawn</td>
+          <td><span class="badge spam_bot">Spam flood</span></td><td>67% of sampled comments are spam or promotion (comparable posts: 2%), with 1,495 comments in total.</td></tr>
+      
+      <tr><td>P1961</td><td>Brand E</td><td>TikTok</td><td>Styling Video</td><td>Eid Collection</td>
+          <td><span class="badge complaint_storm">Complaint storm</span></td><td>93% of sampled comments are delivery/price complaints; comparable posts normally have about 5%.</td></tr>
+      
+      <tr><td>P1103</td><td>Brand A</td><td>Facebook</td><td>Influencer Post</td><td>12.12 Sale</td>
+          <td><span class="badge spam_bot">Spam flood</span></td><td>70% of sampled comments are spam or promotion (comparable posts: 2%), with 5,549 comments in total.</td></tr>
+      
+    </table></div>
+    <p class="note">Showing the 25 most extreme of 124. These are leads to investigate, not verdicts.</p>
+  </section>
+
+  <!-- ===================== Q4 ===================== -->
+  <section id="q4">
+    <h2>4 · Which audience needs should the brand address?</h2>
+    <p class="q">Share of comments in each need group. Orange cells are above the overall average, blue below.</p>
+    
+    
+    <h3>By campaign</h3>
+    <div class="scroll"><table>
+      <tr><th></th><th class="num">Posts</th><th class="num">Fans &amp; praise</th><th class="num">Price enquiries</th><th class="num">Discount seekers</th><th class="num">Availability / stock</th><th class="num">Fabric &amp; quality</th><th class="num">Size &amp; fit</th><th class="num">Delivery enquiries</th><th class="num">Ready to buy</th><th class="num">Delivery complaints</th><th class="num">Price complaints</th><th class="num">Spam / promotion</th></tr>
+      <tr><td><b>11.11 Sale</b></td><td class="num">594</td>
+        <td class="heat" style="background:rgba(60,120,200,0.07)">23%</td><td class="heat" style="background:rgba(234,120,40,0.01)">11%</td><td class="heat" style="background:rgba(234,120,40,0.19)">13%</td><td class="heat" style="background:rgba(60,120,200,0.18)">9%</td><td class="heat" style="background:rgba(60,120,200,0.13)">7%</td><td class="heat" style="background:rgba(60,120,200,0.10)">4%</td><td class="heat" style="background:rgba(60,120,200,0.22)">4%</td><td class="heat" style="background:rgba(60,120,200,0.13)">5%</td><td class="heat" style="background:rgba(234,120,40,0.48)">16%</td><td class="heat" style="background:rgba(60,120,200,0.03)">5%</td><td class="heat" style="background:rgba(60,120,200,0.19)">3%</td></tr><tr><td><b>12.12 Sale</b></td><td class="num">431</td>
+        <td class="heat" style="background:rgba(60,120,200,0.15)">21%</td><td class="heat" style="background:rgba(60,120,200,0.01)">11%</td><td class="heat" style="background:rgba(234,120,40,0.14)">12%</td><td class="heat" style="background:rgba(60,120,200,0.22)">8%</td><td class="heat" style="background:rgba(60,120,200,0.14)">7%</td><td class="heat" style="background:rgba(60,120,200,0.08)">4%</td><td class="heat" style="background:rgba(60,120,200,0.19)">4%</td><td class="heat" style="background:rgba(60,120,200,0.10)">5%</td><td class="heat" style="background:rgba(234,120,40,0.64)">18%</td><td class="heat" style="background:rgba(60,120,200,0.03)">5%</td><td class="heat" style="background:rgba(234,120,40,0.01)">4%</td></tr><tr><td><b>Eid Collection</b></td><td class="num">662</td>
+        <td class="heat" style="background:rgba(234,120,40,0.00)">25%</td><td class="heat" style="background:rgba(60,120,200,0.10)">10%</td><td class="heat" style="background:rgba(60,120,200,0.20)">7%</td><td class="heat" style="background:rgba(234,120,40,0.31)">17%</td><td class="heat" style="background:rgba(60,120,200,0.07)">8%</td><td class="heat" style="background:rgba(60,120,200,0.10)">4%</td><td class="heat" style="background:rgba(234,120,40,0.46)">9%</td><td class="heat" style="background:rgba(234,120,40,0.02)">6%</td><td class="heat" style="background:rgba(60,120,200,0.41)">5%</td><td class="heat" style="background:rgba(60,120,200,0.17)">4%</td><td class="heat" style="background:rgba(234,120,40,0.12)">5%</td></tr><tr><td><b>Summer Lawn</b></td><td class="num">704</td>
+        <td class="heat" style="background:rgba(234,120,40,0.06)">27%</td><td class="heat" style="background:rgba(234,120,40,0.03)">12%</td><td class="heat" style="background:rgba(60,120,200,0.08)">9%</td><td class="heat" style="background:rgba(60,120,200,0.02)">11%</td><td class="heat" style="background:rgba(234,120,40,0.05)">9%</td><td class="heat" style="background:rgba(234,120,40,0.10)">6%</td><td class="heat" style="background:rgba(60,120,200,0.13)">5%</td><td class="heat" style="background:rgba(234,120,40,0.07)">6%</td><td class="heat" style="background:rgba(60,120,200,0.30)">6%</td><td class="heat" style="background:rgba(60,120,200,0.00)">5%</td><td class="heat" style="background:rgba(234,120,40,0.07)">4%</td></tr><tr><td><b>Winter Collection</b></td><td class="num">609</td>
+        <td class="heat" style="background:rgba(234,120,40,0.06)">27%</td><td class="heat" style="background:rgba(234,120,40,0.04)">12%</td><td class="heat" style="background:rgba(60,120,200,0.07)">9%</td><td class="heat" style="background:rgba(60,120,200,0.08)">10%</td><td class="heat" style="background:rgba(234,120,40,0.18)">11%</td><td class="heat" style="background:rgba(234,120,40,0.09)">5%</td><td class="heat" style="background:rgba(60,120,200,0.15)">4%</td><td class="heat" style="background:rgba(234,120,40,0.05)">6%</td><td class="heat" style="background:rgba(60,120,200,0.44)">4%</td><td class="heat" style="background:rgba(234,120,40,0.17)">7%</td><td class="heat" style="background:rgba(60,120,200,0.10)">3%</td></tr>
+    </table></div>
+    
+    
+    <h3>By brand</h3>
+    <div class="scroll"><table>
+      <tr><th></th><th class="num">Posts</th><th class="num">Fans &amp; praise</th><th class="num">Price enquiries</th><th class="num">Discount seekers</th><th class="num">Availability / stock</th><th class="num">Fabric &amp; quality</th><th class="num">Size &amp; fit</th><th class="num">Delivery enquiries</th><th class="num">Ready to buy</th><th class="num">Delivery complaints</th><th class="num">Price complaints</th><th class="num">Spam / promotion</th></tr>
+      <tr><td><b>Brand A</b></td><td class="num">634</td>
+        <td class="heat" style="background:rgba(234,120,40,0.05)">27%</td><td class="heat" style="background:rgba(60,120,200,0.01)">11%</td><td class="heat" style="background:rgba(234,120,40,0.01)">10%</td><td class="heat" style="background:rgba(60,120,200,0.11)">10%</td><td class="heat" style="background:rgba(234,120,40,0.08)">10%</td><td class="heat" style="background:rgba(60,120,200,0.08)">4%</td><td class="heat" style="background:rgba(234,120,40,0.05)">6%</td><td class="heat" style="background:rgba(234,120,40,0.07)">6%</td><td class="heat" style="background:rgba(60,120,200,0.20)">7%</td><td class="heat" style="background:rgba(60,120,200,0.08)">5%</td><td class="heat" style="background:rgba(234,120,40,0.10)">4%</td></tr><tr><td><b>Brand B</b></td><td class="num">591</td>
+        <td class="heat" style="background:rgba(234,120,40,0.01)">26%</td><td class="heat" style="background:rgba(234,120,40,0.09)">13%</td><td class="heat" style="background:rgba(234,120,40,0.04)">10%</td><td class="heat" style="background:rgba(60,120,200,0.10)">10%</td><td class="heat" style="background:rgba(234,120,40,0.04)">9%</td><td class="heat" style="background:rgba(234,120,40,0.07)">5%</td><td class="heat" style="background:rgba(60,120,200,0.10)">5%</td><td class="heat" style="background:rgba(234,120,40,0.05)">6%</td><td class="heat" style="background:rgba(60,120,200,0.17)">7%</td><td class="heat" style="background:rgba(60,120,200,0.09)">5%</td><td class="heat" style="background:rgba(234,120,40,0.04)">4%</td></tr><tr><td><b>Brand C</b></td><td class="num">609</td>
+        <td class="heat" style="background:rgba(60,120,200,0.06)">23%</td><td class="heat" style="background:rgba(60,120,200,0.03)">11%</td><td class="heat" style="background:rgba(60,120,200,0.01)">10%</td><td class="heat" style="background:rgba(60,120,200,0.18)">9%</td><td class="heat" style="background:rgba(60,120,200,0.08)">8%</td><td class="heat" style="background:rgba(60,120,200,0.01)">5%</td><td class="heat" style="background:rgba(234,120,40,0.11)">6%</td><td class="heat" style="background:rgba(234,120,40,0.00)">5%</td><td class="heat" style="background:rgba(234,120,40,0.41)">15%</td><td class="heat" style="background:rgba(60,120,200,0.09)">5%</td><td class="heat" style="background:rgba(60,120,200,0.15)">3%</td></tr><tr><td><b>Brand D</b></td><td class="num">575</td>
+        <td class="heat" style="background:rgba(60,120,200,0.05)">24%</td><td class="heat" style="background:rgba(60,120,200,0.05)">11%</td><td class="heat" style="background:rgba(60,120,200,0.05)">9%</td><td class="heat" style="background:rgba(234,120,40,0.38)">18%</td><td class="heat" style="background:rgba(60,120,200,0.02)">9%</td><td class="heat" style="background:rgba(60,120,200,0.07)">4%</td><td class="heat" style="background:rgba(60,120,200,0.08)">5%</td><td class="heat" style="background:rgba(60,120,200,0.10)">5%</td><td class="heat" style="background:rgba(60,120,200,0.14)">8%</td><td class="heat" style="background:rgba(60,120,200,0.10)">5%</td><td class="heat" style="background:rgba(60,120,200,0.05)">4%</td></tr><tr><td><b>Brand E</b></td><td class="num">591</td>
+        <td class="heat" style="background:rgba(234,120,40,0.01)">25%</td><td class="heat" style="background:rgba(60,120,200,0.02)">11%</td><td class="heat" style="background:rgba(234,120,40,0.00)">10%</td><td class="heat" style="background:rgba(60,120,200,0.10)">10%</td><td class="heat" style="background:rgba(60,120,200,0.05)">8%</td><td class="heat" style="background:rgba(234,120,40,0.05)">5%</td><td class="heat" style="background:rgba(60,120,200,0.04)">5%</td><td class="heat" style="background:rgba(60,120,200,0.07)">5%</td><td class="heat" style="background:rgba(60,120,200,0.03)">9%</td><td class="heat" style="background:rgba(234,120,40,0.27)">8%</td><td class="heat" style="background:rgba(234,120,40,0.00)">4%</td></tr>
+    </table></div>
+    
+    
+    <h3>By platform</h3>
+    <div class="scroll"><table>
+      <tr><th></th><th class="num">Posts</th><th class="num">Fans &amp; praise</th><th class="num">Price enquiries</th><th class="num">Discount seekers</th><th class="num">Availability / stock</th><th class="num">Fabric &amp; quality</th><th class="num">Size &amp; fit</th><th class="num">Delivery enquiries</th><th class="num">Ready to buy</th><th class="num">Delivery complaints</th><th class="num">Price complaints</th><th class="num">Spam / promotion</th></tr>
+      <tr><td><b>Facebook</b></td><td class="num">779</td>
+        <td class="heat" style="background:rgba(60,120,200,0.25)">17%</td><td class="heat" style="background:rgba(234,120,40,0.02)">12%</td><td class="heat" style="background:rgba(234,120,40,0.03)">10%</td><td class="heat" style="background:rgba(234,120,40,0.04)">12%</td><td class="heat" style="background:rgba(234,120,40,0.04)">9%</td><td class="heat" style="background:rgba(234,120,40,0.06)">5%</td><td class="heat" style="background:rgba(234,120,40,0.05)">6%</td><td class="heat" style="background:rgba(234,120,40,0.07)">6%</td><td class="heat" style="background:rgba(234,120,40,0.10)">11%</td><td class="heat" style="background:rgba(234,120,40,0.36)">8%</td><td class="heat" style="background:rgba(60,120,200,0.11)">3%</td></tr><tr><td><b>Instagram</b></td><td class="num">1342</td>
+        <td class="heat" style="background:rgba(234,120,40,0.00)">25%</td><td class="heat" style="background:rgba(234,120,40,0.02)">12%</td><td class="heat" style="background:rgba(60,120,200,0.04)">9%</td><td class="heat" style="background:rgba(234,120,40,0.02)">12%</td><td class="heat" style="background:rgba(234,120,40,0.03)">9%</td><td class="heat" style="background:rgba(234,120,40,0.05)">5%</td><td class="heat" style="background:rgba(60,120,200,0.00)">5%</td><td class="heat" style="background:rgba(234,120,40,0.01)">6%</td><td class="heat" style="background:rgba(60,120,200,0.02)">9%</td><td class="heat" style="background:rgba(60,120,200,0.05)">5%</td><td class="heat" style="background:rgba(60,120,200,0.16)">3%</td></tr><tr><td><b>TikTok</b></td><td class="num">879</td>
+        <td class="heat" style="background:rgba(234,120,40,0.16)">31%</td><td class="heat" style="background:rgba(60,120,200,0.06)">11%</td><td class="heat" style="background:rgba(234,120,40,0.02)">10%</td><td class="heat" style="background:rgba(60,120,200,0.08)">10%</td><td class="heat" style="background:rgba(60,120,200,0.10)">8%</td><td class="heat" style="background:rgba(60,120,200,0.18)">4%</td><td class="heat" style="background:rgba(60,120,200,0.06)">5%</td><td class="heat" style="background:rgba(60,120,200,0.10)">5%</td><td class="heat" style="background:rgba(60,120,200,0.09)">8%</td><td class="heat" style="background:rgba(60,120,200,0.35)">3%</td><td class="heat" style="background:rgba(234,120,40,0.26)">5%</td></tr>
+    </table></div>
+    
+
+    <h3>Where is stock and delivery demand?</h3>
+    <div class="scroll"><table style="max-width:560px">
+      <tr><th>City named</th><th class="num">Mentions</th><th class="num">Availability</th><th class="num">Delivery enquiries</th><th class="num">Share</th></tr>
+      <tr><td>Karachi</td><td class="num">207</td><td class="num">131</td><td class="num">76</td><td class="num">21%</td></tr><tr><td>Lahore</td><td class="num">198</td><td class="num">132</td><td class="num">66</td><td class="num">20%</td></tr><tr><td>Islamabad</td><td class="num">130</td><td class="num">74</td><td class="num">56</td><td class="num">13%</td></tr><tr><td>Faisalabad</td><td class="num">74</td><td class="num">55</td><td class="num">19</td><td class="num">8%</td></tr><tr><td>Multan</td><td class="num">73</td><td class="num">46</td><td class="num">27</td><td class="num">7%</td></tr><tr><td>Peshawar</td><td class="num">73</td><td class="num">42</td><td class="num">31</td><td class="num">7%</td></tr>
+    </table></div>
+
+    <h3>Try a comment</h3>
+    
+      <p class="note">The live classifier is available when the app runs with <code>python app.py</code>.</p>
+    
+  </section>
+
+  <!-- ===================== Q5 ===================== -->
+  <section id="q5">
+    <h2>5 · What should the marketing team do next?</h2>
+    <p class="q">Each recommendation is generated from the numbers above and shows the evidence that triggered it. Priority reflects how many customers it affects and how serious the issue is.</p>
+    
+    <div class="rec">
+      <h4><span class="badge High">High</span> &nbsp;Customer service: Fix late-delivery complaints; reply on storm posts first</h4>
+      <p><b>Evidence:</b> 9% of comments are delivery complaints. Hot spots: Brand C (15%, 1.7x), 11.11 Sale (16%, 1.8x), 12.12 Sale (18%, 2.0x). 29 posts are complaint storms (far more complaints than comparable posts).</p>
+      <p><b>Action:</b> Assign support to reply within 2 hours on storm posts, pin a delivery-timeline note on sale posts, and review courier performance for the hot-spot brands/campaigns.</p>
+      <p class="muted"><b>Track:</b> Delivery-complaint share; first-reply time</p>
+    </div>
+    
+    <div class="rec">
+      <h4><span class="badge High">High</span> &nbsp;Promotions: Answer discount requests before they are asked</h4>
+      <p><b>Evidence:</b> 10% of comments ask about discounts, codes or sales. Highest in 11.11 Sale (1.3x average). Most of them comment on Sale Announcements (42%).</p>
+      <p><b>Action:</b> Put the offer or code in the caption and pinned comment of sale posts, and test a bundle offer against a flat percentage discount.</p>
+      <p class="muted"><b>Track:</b> Discount-request share; conversion on promo code</p>
+    </div>
+    
+    <div class="rec">
+      <h4><span class="badge High">High</span> &nbsp;Content: Instagram: lead with Eid Campaigns, keep Product Photo, Sale Announcement for conversion</h4>
+      <p><b>Evidence:</b> Median engagement index 1.56 for Eid Campaign (90% CI 1.40-1.63) vs 0.66 for Sale Announcement (113 vs 198 posts). Evidence: strong (intervals do not overlap).</p>
+      <p><b>Action:</b> Use Eid Campaigns for reach, but do not drop Product Photo, Sale Announcement: they get less attention yet carry more buying-signal comments.</p>
+      <p class="muted"><b>Track:</b> Engagement index per post; buying-signal rate</p>
+    </div>
+    
+    <div class="rec">
+      <h4><span class="badge Medium">Medium</span> &nbsp;Product &amp; stock: Close stock and city-availability gaps</h4>
+      <p><b>Evidence:</b> 11% of comments ask if the item is available. Most-named cities: Karachi (21%), Lahore (20%), Islamabad (13%). Brands above average: Brand D (18%).</p>
+      <p><b>Action:</b> Show &#39;in stock / sold out&#39; and city availability on posts; restock the sizes and cities named most; consider a waitlist or pre-order.</p>
+      <p class="muted"><b>Track:</b> Availability-enquiry share</p>
+    </div>
+    
+    <div class="rec">
+      <h4><span class="badge Medium">Medium</span> &nbsp;Content: Product Photos convert better than they attract</h4>
+      <p><b>Evidence:</b> Buying-signal comments are 49% of comments (all posts: 48%) but engagement index is only 0.69.</p>
+      <p><b>Action:</b> Give Product Photos paid reach or influencer cross-posting; they reach fewer people but the ones reached want to buy.</p>
+      <p class="muted"><b>Track:</b> Buying-signal comments per 1,000 likes</p>
+    </div>
+    
+    <div class="rec">
+      <h4><span class="badge Medium">Medium</span> &nbsp;Content: Sale Announcements convert better than they attract</h4>
+      <p><b>Evidence:</b> Buying-signal comments are 67% of comments (all posts: 48%) but engagement index is only 0.64.</p>
+      <p><b>Action:</b> Give Sale Announcements paid reach or influencer cross-posting; they reach fewer people but the ones reached want to buy.</p>
+      <p class="muted"><b>Track:</b> Buying-signal comments per 1,000 likes</p>
+    </div>
+    
+    <div class="rec">
+      <h4><span class="badge Low">Low</span> &nbsp;Content: TikTok: lead with Reels, cut back Influencer Posts</h4>
+      <p><b>Evidence:</b> Median engagement index 1.29 for Reel (90% CI 1.17-1.43) vs 0.95 for Influencer Post (269 vs 174 posts). Evidence: strong (intervals do not overlap).</p>
+      <p><b>Action:</b> Shift about 15-20% of TikTok posting slots from Influencer Posts (low attention and few buying signals) to Reels for the next campaign and re-measure.</p>
+      <p class="muted"><b>Track:</b> Engagement index per post; buying-signal rate</p>
+    </div>
+    
+    <div class="rec">
+      <h4><span class="badge Low">Low</span> &nbsp;Content: Facebook: lead with Eid Campaigns, keep Sale Announcement, Product Photo for conversion</h4>
+      <p><b>Evidence:</b> Median engagement index 1.78 for Eid Campaign (90% CI 1.50-2.09) vs 0.66 for Product Photo (48 vs 166 posts). Evidence: strong (intervals do not overlap).</p>
+      <p><b>Action:</b> Use Eid Campaigns for reach, but do not drop Sale Announcement, Product Photo: they get less attention yet carry more buying-signal comments.</p>
+      <p class="muted"><b>Track:</b> Engagement index per post; buying-signal rate</p>
+    </div>
+    
+    <div class="rec">
+      <h4><span class="badge Low">Low</span> &nbsp;Content: Reels get attention but little buying intent</h4>
+      <p><b>Evidence:</b> Engagement index 1.36 (above typical) but only 39% of comments show buying signals.</p>
+      <p><b>Action:</b> Add a clear call to action on Reels (price in caption, &#39;DM to order&#39;, shop link in bio).</p>
+      <p class="muted"><b>Track:</b> Buying-signal rate</p>
+    </div>
+    
+    <div class="rec">
+      <h4><span class="badge Low">Low</span> &nbsp;Content: Influencer Posts get attention but little buying intent</h4>
+      <p><b>Evidence:</b> Engagement index 1.07 (above typical) but only 42% of comments show buying signals.</p>
+      <p><b>Action:</b> Add a clear call to action on Influencer Posts (price in caption, &#39;DM to order&#39;, shop link in bio).</p>
+      <p class="muted"><b>Track:</b> Buying-signal rate</p>
+    </div>
+    
+    <div class="rec">
+      <h4><span class="badge Low">Low</span> &nbsp;Content: Styling Videos get attention but little buying intent</h4>
+      <p><b>Evidence:</b> Engagement index 1.07 (above typical) but only 42% of comments show buying signals.</p>
+      <p><b>Action:</b> Add a clear call to action on Styling Videos (price in caption, &#39;DM to order&#39;, shop link in bio).</p>
+      <p class="muted"><b>Track:</b> Buying-signal rate</p>
+    </div>
+    
+    <div class="rec">
+      <h4><span class="badge Low">Low</span> &nbsp;Campaign testing: Run three A/B tests next campaign</h4>
+      <p><b>Evidence:</b> Price in caption vs no price on Product Photos (13% of Product Photo comments just ask &#39;price?&#39;); &#39;DM to order&#39; / shop-link call to action vs none on Reels (Reels attract praise but fewer buying signals than Sale Announcements); Offer code in caption vs offer in image only on Sale Announcements (Discount requests are the largest buying-signal group on sale posts).</p>
+      <p><b>Action:</b> To detect a 25% lift in engagement you need about 79 posts per arm (log-engagement spread 0.50); for smaller teams, run each test across 3-4 weeks and several brands/platforms.</p>
+      <p class="muted"><b>Track:</b> Price-enquiry share, buying-signal rate; Buying-signal comments per 1,000 likes; Discount-request share, promo-code redemptions</p>
+    </div>
+    
+    <div class="rec">
+      <h4><span class="badge Low">Low</span> &nbsp;Promotions: Reframe value where price pushback is high</h4>
+      <p><b>Evidence:</b> 5% of comments say the price is too high. Strongest: Facebook (8%, 1.6x), Brand E (8%, 1.4x).</p>
+      <p><b>Action:</b> Test value framing (fabric details, cost per wear, instalment or bundle pricing) against the current price-only caption.</p>
+      <p class="muted"><b>Track:</b> Price-complaint share</p>
+    </div>
+    
+    <div class="rec">
+      <h4><span class="badge Low">Low</span> &nbsp;Customer service: Filter spam and fake-giveaway comments</h4>
+      <p><b>Evidence:</b> 4% of comments are spam/promotion, 41% of them on TikTok; 31 posts are spam-flooded.</p>
+      <p><b>Action:</b> Turn on keyword filters (giveaway, follow, replica, DM for) and hide flagged comments so they do not bury real buyer questions.</p>
+      <p class="muted"><b>Track:</b> Spam share of comments</p>
+    </div>
+    
+    <div class="rec">
+      <h4><span class="badge Low">Low</span> &nbsp;Customer service: Publish delivery times and charges up front</h4>
+      <p><b>Evidence:</b> 5% of comments ask how long delivery takes, what it costs or whether it arrives before Eid.</p>
+      <p><b>Action:</b> Add delivery days by city and the cash-on-delivery option to captions and highlights.</p>
+      <p class="muted"><b>Track:</b> Delivery-enquiry share</p>
+    </div>
+    
+  </section>
+
+  <!-- ===================== trust ===================== -->
+  <section id="trust">
+    <h2>How reliable is this?</h2>
+    
+    <p class="q">Because the data is simulated, the hidden truth is known and the engine can be checked. None of these labels were used to build it.</p>
+    <table style="max-width:760px">
+      <tr><td>Audience groups vs true comment topics</td><td class="num">ARI 0.912 · NMI 0.904 · purity 0.932</td></tr>
+      <tr><td>Buying-intent detection ("Ready to buy")</td><td class="num">precision 0.964 · recall 0.867</td></tr>
+      <tr><td>Unusual-post detection (all types)</td><td class="num">precision 0.863 · recall 0.899</td></tr>
+      
+      <tr><td style="padding-left:24px">Viral (39 planted)</td><td class="num">recall 0.77 · precision 0.88</td></tr>
+      
+      <tr><td style="padding-left:24px">Flop (30 planted)</td><td class="num">recall 0.9 · precision 0.9</td></tr>
+      
+      <tr><td style="padding-left:24px">Complaint storm (25 planted)</td><td class="num">recall 1.0 · precision 0.86</td></tr>
+      
+      <tr><td style="padding-left:24px">Spam flood (25 planted)</td><td class="num">recall 1.0 · precision 0.81</td></tr>
+      
+    </table>
+    
+    <p class="note">With real data these scores will be lower; the comments would be messier and the true segments unknown. Review the unusual posts and the cluster examples manually before acting on them.</p>
+  </section>
+  <footer>Audience Behaviour Discovery · class project · simulated data</footer>
+</div>
+</body>
+</html>

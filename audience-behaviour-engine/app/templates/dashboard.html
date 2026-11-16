@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Audience Behaviour Discovery – Lawn Suit Campaigns</title>
+<style>
+  :root { color-scheme: light; --ink:#1d2433; --muted:#667085; --line:#e4e7ec; --bg:#f6f7f9; --card:#fff; --accent:#1f4e79; }
+  * { box-sizing: border-box; }
+  body { margin:0; font:15px/1.5 -apple-system,"Segoe UI",Roboto,Arial,sans-serif; color:var(--ink); background:var(--bg); }
+  header { background:var(--accent); color:#fff; padding:22px 28px; }
+  header h1 { margin:0 0 4px; font-size:22px; }
+  header p { margin:0; opacity:.85; font-size:14px; }
+  .wrap { max-width:1180px; margin:0 auto; padding:0 20px 60px; }
+  .banner { background:#fff7e6; border:1px solid #f5d98b; color:#7a5b00; padding:10px 14px; border-radius:8px; margin:18px 0; font-size:13.5px; }
+  form.filters { display:flex; flex-wrap:wrap; gap:12px; align-items:end; background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px; margin-bottom:14px; }
+  form.filters label { font-size:12px; color:var(--muted); display:block; margin-bottom:3px; }
+  select, button, textarea { font:inherit; padding:7px 10px; border:1px solid #cbd2dc; border-radius:7px; background:#fff; color:var(--ink); }
+  button { background:var(--accent); color:#fff; border-color:var(--accent); cursor:pointer; }
+  .kpis { display:flex; gap:12px; flex-wrap:wrap; margin-bottom:6px; }
+  .kpi { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:10px 16px; min-width:150px; }
+  .kpi b { display:block; font-size:22px; } .kpi span { color:var(--muted); font-size:12.5px; }
+  nav { position:sticky; top:0; z-index:5; background:var(--bg); padding:10px 0; display:flex; gap:8px; flex-wrap:wrap; border-bottom:1px solid var(--line); margin-bottom:6px; }
+  nav a { text-decoration:none; color:var(--accent); background:#fff; border:1px solid var(--line); padding:6px 12px; border-radius:20px; font-size:13.5px; }
+  section { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px 22px; margin-top:18px; }
+  section h2 { margin:0 0 2px; font-size:19px; } section .q { color:var(--muted); margin:0 0 14px; font-size:13.5px; }
+  h3 { font-size:15px; margin:20px 0 8px; }
+  table { border-collapse:collapse; width:100%; font-size:13.5px; }
+  th, td { padding:7px 9px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+  th { color:var(--muted); font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:.03em; }
+  td.num, th.num { text-align:right; font-variant-numeric:tabular-nums; }
+  .scroll { overflow-x:auto; }
+  .bar { height:9px; background:#e8edf3; border-radius:5px; position:relative; min-width:90px; }
+  .bar i { position:absolute; left:0; top:0; bottom:0; background:var(--accent); border-radius:5px; }
+  .badge { display:inline-block; padding:2px 9px; border-radius:12px; font-size:12px; font-weight:600; white-space:nowrap; }
+  .Star { background:#d9f2e3; color:#136c3a; } .Awareness-only { background:#e3ecfb; color:#1d4fa3; }
+  .Hidden-converter { background:#fff0d6; color:#8a5200; } .Rethink { background:#fde4e4; color:#a12626; }
+  .viral { background:#d9f2e3; color:#136c3a; } .flop { background:#fde4e4; color:#a12626; }
+  .complaint_storm { background:#ffe3cf; color:#a34100; } .spam_bot { background:#ece4f7; color:#5b2e91; } .comment_surge { background:#e3ecfb; color:#1d4fa3; }
+  .High { background:#fde4e4; color:#a12626; } .Medium { background:#fff0d6; color:#8a5200; } .Low { background:#e8edf3; color:#475467; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(330px,1fr)); gap:14px; }
+  .card { border:1px solid var(--line); border-radius:10px; padding:13px 15px; background:#fff; }
+  .card h4 { margin:0 0 4px; font-size:15px; display:flex; justify-content:space-between; gap:8px; align-items:center; }
+  .muted { color:var(--muted); font-size:12.5px; }
+  .ex { font-size:13px; background:#f3f5f8; border-radius:6px; padding:3px 8px; margin:4px 0 0; display:block; }
+  .rec { border-left:4px solid var(--accent); padding:10px 14px; margin-bottom:12px; background:#fafbfc; border-radius:0 8px 8px 0; }
+  .rec h4 { margin:0 0 6px; font-size:15px; } .rec p { margin:3px 0; font-size:13.5px; }
+  .tabs3 { display:grid; grid-template-columns:1fr; gap:6px; }
+  .note { font-size:12.5px; color:var(--muted); margin-top:6px; }
+  td.heat { text-align:right; font-variant-numeric:tabular-nums; }
+  #out { margin-top:10px; font-size:14px; }
+  textarea { width:100%; max-width:520px; }
+  [dir=rtl] { unicode-bidi:plaintext; }
+  footer { color:var(--muted); font-size:12.5px; margin-top:28px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Audience Behaviour Discovery</h1>
+  <p>Women's lawn-suit campaigns on Instagram, TikTok and Facebook · 11.11 / 12.12 / Eid collections</p>
+</header>
+<div class="wrap">
+  <div class="banner"><b>Simulated data.</b> Every post and comment here was generated for this class project (Brand A–E are fictional). The method is real; the numbers are not measurements of any actual brand.</div>
+
+  {% if not static %}
+  <form class="filters" method="get">
+    <div><label>Brand</label><select name="brand"><option value="">All brands</option>{% for b in brands %}<option {{ 'selected' if b==brand }}>{{ b }}</option>{% endfor %}</select></div>
+    <div><label>Platform</label><select name="platform"><option value="">All platforms</option>{% for b in platforms %}<option {{ 'selected' if b==platform }}>{{ b }}</option>{% endfor %}</select></div>
+    <div><label>Campaign</label><select name="campaign"><option value="">All campaigns</option>{% for b in campaigns %}<option {{ 'selected' if b==campaign }}>{{ b }}</option>{% endfor %}</select></div>
+    <button type="submit">Apply filters</button>
+  </form>
+  {% endif %}
+
+  <div class="kpis">
+    <div class="kpi"><b>{{ '{:,}'.format(n_posts) }}</b><span>posts analysed</span></div>
+    <div class="kpi"><b>{{ '{:,}'.format(n_comments) }}</b><span>comments analysed</span></div>
+    <div class="kpi"><b>{{ needs|length }}</b><span>audience needs found</span></div>
+    <div class="kpi"><b>{{ anom_total }}</b><span>unusual posts</span></div>
+    <div class="kpi"><b>{{ pct(tiers.get('High intent', 0) + tiers.get('Possible inquiry', 0)) }}</b><span>comments with buying signals</span></div>
+  </div>
+
+  <nav>
+    <a href="#q1">1 · Content</a><a href="#q2">2 · Audience wants</a><a href="#q3">3 · Unusual posts</a>
+    <a href="#q4">4 · Needs by campaign</a><a href="#q5">5 · What to do next</a><a href="#trust">How reliable?</a>
+  </nav>
+
+  <!-- ===================== Q1 ===================== -->
+  <section id="q1">
+    <h2>1 · Which content attracts attention?</h2>
+    <p class="q">Engagement index = (likes + 2×comments + 3×shares) relative to a typical post of the same brand and platform (1.00 = typical). Only posts at least 7 days old are compared. Bars show the median with a 90% interval.</p>
+    <div class="scroll"><table>
+      <tr><th>Content type</th><th class="num">Posts</th><th style="width:230px">Engagement index</th><th class="num">Eng. rate (views)</th><th class="num">Shares per like</th><th class="num">Comments / 1k likes</th><th class="num">Buying-signal comments</th><th>Role</th></tr>
+      {% for r in content %}
+      <tr><td><b>{{ r.content_type }}</b></td><td class="num">{{ r.posts }}</td>
+        <td><div class="bar"><i style="width:{{ [r.eng_index / 2 * 100, 100]|min }}%"></i></div>
+            <span class="muted">{{ '%.2f'|format(r.eng_index) }} &nbsp;({{ '%.2f'|format(r.ci_low) }}–{{ '%.2f'|format(r.ci_high) }})</span></td>
+        <td class="num">{{ pct(r.eng_rate, 1) }}</td><td class="num">{{ '%.2f'|format(r.share_to_like) }}</td>
+        <td class="num">{{ '%.0f'|format(r.comments_per_1k_likes) }}</td><td class="num">{{ pct(r.buying_signal_rate) }}</td>
+        <td><span class="badge {{ r.role|replace(' ','-') }}">{{ r.role }}</span></td></tr>
+      {% endfor %}
+    </table></div>
+    <p class="note"><b>Star</b> = high attention and high buying signals · <b>Awareness only</b> = attention but few buying signals · <b>Hidden converter</b> = less attention, many buying signals · <b>Rethink</b> = low on both.</p>
+
+    <h3>Engagement index by platform and content type</h3>
+    <div class="scroll"><table>
+      <tr><th>Content type</th>{% for p in matrix_platforms %}<th class="num">{{ p }}</th>{% endfor %}</tr>
+      {% for c in matrix_contents %}
+      <tr><td>{{ c }}</td>
+        {% for p in matrix_platforms %}{% set m = matrix.get((c,p)) %}
+        <td class="heat" style="background:{{ (m.eng_index if m else None)|heat }}">{% if m %}{{ '%.2f'|format(m.eng_index) }} <span class="muted">n={{ m.posts }}</span>{% else %}–{% endif %}</td>
+        {% endfor %}</tr>
+      {% endfor %}
+    </table></div>
+  </section>
+
+  <!-- ===================== Q2 ===================== -->
+  <section id="q2">
+    <h2>2 · What does the audience want?</h2>
+    <p class="q">Comments in English, Roman Urdu and Urdu script were grouped automatically by meaning (no labels used). Each group is named from the words and phrases that define it.</p>
+    <div class="grid">
+    {% for n in needs %}
+      <div class="card">
+        <h4>{{ n.need }} <span class="badge {{ 'High' if n.tier=='High intent' else 'Medium' if n.tier=='Possible inquiry' else 'Low' }}">{{ n.tier }}</span></h4>
+        <div class="bar"><i style="width:{{ [n.share*100/0.3*100/100, 100]|min }}%"></i></div>
+        <div class="muted">{{ pct(n.share,1) }} of comments · {{ '{:,}'.format(n.comments) }}
+          · {% for l,v in n.lang.items() %}{{ l }} {{ pct(v) }}{{ ', ' if not loop.last }}{% endfor %}</div>
+        <div class="muted" style="margin-top:4px">Key words: {{ n.terms|join(', ') }}</div>
+        {% for e in n.examples %}<span class="ex" dir="auto">{{ e }}</span>{% endfor %}
+      </div>
+    {% endfor %}
+    </div>
+  </section>
+
+  <!-- ===================== Q3 ===================== -->
+  <section id="q3">
+    <h2>3 · Which marketing patterns are unusual?</h2>
+    <p class="q">Every post is compared with what comparable posts (same brand, platform, format, campaign and age) normally get. Posts far outside that range, or with an unusual comment mix, are listed for investigation.</p>
+    <p>{% for k,v in anom_counts.items() %}<span class="badge {{ k }}">{{ type_label.get(k,k) }}: {{ v }}</span> {% endfor %}</p>
+    <div class="scroll"><table>
+      <tr><th>Post</th><th>Brand</th><th>Platform</th><th>Content</th><th>Campaign</th><th>Type</th><th>Why it was flagged</th></tr>
+      {% for a in anomalies %}
+      <tr><td>{{ a.post_id }}</td><td>{{ a.brand }}</td><td>{{ a.platform }}</td><td>{{ a.content_type }}</td><td>{{ a.campaign }}</td>
+          <td><span class="badge {{ a.anomaly_type }}">{{ type_label.get(a.anomaly_type, a.anomaly_type) }}</span></td><td>{{ a.why }}</td></tr>
+      {% endfor %}
+    </table></div>
+    <p class="note">Showing the {{ anomalies|length }} most extreme of {{ anom_total }}. These are leads to investigate, not verdicts.</p>
+  </section>
+
+  <!-- ===================== Q4 ===================== -->
+  <section id="q4">
+    <h2>4 · Which audience needs should the brand address?</h2>
+    <p class="q">Share of comments in each need group. Orange cells are above the overall average, blue below.</p>
+    {% for title, rows in [('By campaign', mix_campaign), ('By brand', mix_brand), ('By platform', mix_platform)] %}
+    {% if rows %}
+    <h3>{{ title }}</h3>
+    <div class="scroll"><table>
+      <tr><th></th><th class="num">Posts</th>{% for n in needs_order %}<th class="num">{{ n }}</th>{% endfor %}</tr>
+      {% for r in rows %}<tr><td><b>{{ r.key }}</b></td><td class="num">{{ r.n }}</td>
+        {% for n in needs_order %}<td class="heat" style="background:{{ r.lift[n]|heat }}">{{ pct(r.share[n]) }}</td>{% endfor %}</tr>{% endfor %}
+    </table></div>
+    {% endif %}{% endfor %}
+
+    <h3>Where is stock and delivery demand?</h3>
+    <div class="scroll"><table style="max-width:560px">
+      <tr><th>City named</th><th class="num">Mentions</th><th class="num">Availability</th><th class="num">Delivery enquiries</th><th class="num">Share</th></tr>
+      {% for c in cities %}<tr><td>{{ c.city }}</td><td class="num">{{ c.mentions }}</td><td class="num">{{ c.availability }}</td><td class="num">{{ c.delivery_enquiries }}</td><td class="num">{{ pct(c.share) }}</td></tr>{% endfor %}
+    </table></div>
+
+    <h3>Try a comment</h3>
+    {% if static %}
+      <p class="note">The live classifier is available when the app runs with <code>python app.py</code>.</p>
+    {% else %}
+      <textarea id="t" rows="2" placeholder="e.g.  Delivery kitne din mein hogi?   /   Price bohat zyada hai   /   قیمت کیا ہے؟"></textarea><br>
+      <button type="button" onclick="cls()" style="margin-top:6px">Classify</button>
+      <div id="out"></div>
+      <script>
+      async function cls(){
+        const t=document.getElementById('t').value, o=document.getElementById('out');
+        const r=await fetch('/api/classify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:t})});
+        const j=await r.json(); if(!r.ok){o.textContent=j.error;return;}
+        o.innerHTML='<b>'+j.need+'</b> &nbsp;<span class="badge Low">'+j.intent+'</span><br><span class="muted">key words: '+j.top_terms.join(', ')+'</span>';
+      }
+      </script>
+    {% endif %}
+  </section>
+
+  <!-- ===================== Q5 ===================== -->
+  <section id="q5">
+    <h2>5 · What should the marketing team do next?</h2>
+    <p class="q">Each recommendation is generated from the numbers above and shows the evidence that triggered it. Priority reflects how many customers it affects and how serious the issue is.</p>
+    {% for r in recs %}
+    <div class="rec">
+      <h4><span class="badge {{ r.priority }}">{{ r.priority }}</span> &nbsp;{{ r.area }}: {{ r.title }}</h4>
+      <p><b>Evidence:</b> {{ r.evidence }}</p>
+      <p><b>Action:</b> {{ r.action }}</p>
+      <p class="muted"><b>Track:</b> {{ r.metric }}</p>
+    </div>
+    {% else %}<p class="muted">Not enough comments in this filter to make reliable recommendations.</p>{% endfor %}
+  </section>
+
+  <!-- ===================== trust ===================== -->
+  <section id="trust">
+    <h2>How reliable is this?</h2>
+    {% if validation.comment_clustering %}
+    <p class="q">Because the data is simulated, the hidden truth is known and the engine can be checked. None of these labels were used to build it.</p>
+    <table style="max-width:760px">
+      <tr><td>Audience groups vs true comment topics</td><td class="num">ARI {{ validation.comment_clustering.ARI }} · NMI {{ validation.comment_clustering.NMI }} · purity {{ validation.comment_clustering.purity }}</td></tr>
+      <tr><td>Buying-intent detection ("Ready to buy")</td><td class="num">precision {{ validation.high_intent_detection.precision }} · recall {{ validation.high_intent_detection.recall }}</td></tr>
+      <tr><td>Unusual-post detection (all types)</td><td class="num">precision {{ validation.anomaly_detection.overall_precision }} · recall {{ validation.anomaly_detection.overall_recall }}</td></tr>
+      {% for k,v in validation.anomaly_detection.by_type.items() %}
+      <tr><td style="padding-left:24px">{{ type_label.get(k,k) }} ({{ v.planted }} planted)</td><td class="num">recall {{ v.recall }} · precision {{ v.precision }}</td></tr>
+      {% endfor %}
+    </table>
+    {% else %}<p class="q">{{ validation.note }}</p>{% endif %}
+    <p class="note">With real data these scores will be lower; the comments would be messier and the true segments unknown. Review the unusual posts and the cluster examples manually before acting on them.</p>
+  </section>
+  <footer>Audience Behaviour Discovery · class project · simulated data</footer>
+</div>
+</body>
+</html>

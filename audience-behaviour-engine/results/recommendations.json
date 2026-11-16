@@ -1,0 +1,137 @@
+[
+  {
+    "area": "Customer service",
+    "points": 34.532621641889804,
+    "title": "Fix late-delivery complaints; reply on storm posts first",
+    "evidence": "9% of comments are delivery complaints. Hot spots: Brand C (15%, 1.7x), 11.11 Sale (16%, 1.8x), 12.12 Sale (18%, 2.0x). 29 posts are complaint storms (far more complaints than comparable posts).",
+    "action": "Assign support to reply within 2 hours on storm posts, pin a delivery-timeline note on sale posts, and review courier performance for the hot-spot brands/campaigns.",
+    "metric": "Delivery-complaint share; first-reply time",
+    "priority": "High"
+  },
+  {
+    "area": "Promotions",
+    "points": 12.645021835987473,
+    "title": "Answer discount requests before they are asked",
+    "evidence": "10% of comments ask about discounts, codes or sales. Highest in 11.11 Sale (1.3x average). Most of them comment on Sale Announcements (42%).",
+    "action": "Put the offer or code in the caption and pinned comment of sale posts, and test a bundle offer against a flat percentage discount.",
+    "metric": "Discount-request share; conversion on promo code",
+    "priority": "High"
+  },
+  {
+    "area": "Content",
+    "points": 12.525333333333334,
+    "title": "Instagram: lead with Eid Campaigns, keep Product Photo, Sale Announcement for conversion",
+    "evidence": "Median engagement index 1.56 for Eid Campaign (90% CI 1.40-1.63) vs 0.66 for Sale Announcement (113 vs 198 posts). Evidence: strong (intervals do not overlap).",
+    "action": "Use Eid Campaigns for reach, but do not drop Product Photo, Sale Announcement: they get less attention yet carry more buying-signal comments.",
+    "metric": "Engagement index per post; buying-signal rate",
+    "priority": "High"
+  },
+  {
+    "area": "Product & stock",
+    "points": 11.350302174776127,
+    "title": "Close stock and city-availability gaps",
+    "evidence": "11% of comments ask if the item is available. Most-named cities: Karachi (21%), Lahore (20%), Islamabad (13%). Brands above average: Brand D (18%).",
+    "action": "Show 'in stock / sold out' and city availability on posts; restock the sizes and cities named most; consider a waitlist or pre-order.",
+    "metric": "Availability-enquiry share",
+    "priority": "Medium"
+  },
+  {
+    "area": "Content",
+    "points": 9,
+    "title": "Product Photos convert better than they attract",
+    "evidence": "Buying-signal comments are 49% of comments (all posts: 48%) but engagement index is only 0.69.",
+    "action": "Give Product Photos paid reach or influencer cross-posting; they reach fewer people but the ones reached want to buy.",
+    "metric": "Buying-signal comments per 1,000 likes",
+    "priority": "Medium"
+  },
+  {
+    "area": "Content",
+    "points": 9,
+    "title": "Sale Announcements convert better than they attract",
+    "evidence": "Buying-signal comments are 67% of comments (all posts: 48%) but engagement index is only 0.64.",
+    "action": "Give Sale Announcements paid reach or influencer cross-posting; they reach fewer people but the ones reached want to buy.",
+    "metric": "Buying-signal comments per 1,000 likes",
+    "priority": "Medium"
+  },
+  {
+    "area": "Content",
+    "points": 8.203999999999999,
+    "title": "TikTok: lead with Reels, cut back Influencer Posts",
+    "evidence": "Median engagement index 1.29 for Reel (90% CI 1.17-1.43) vs 0.95 for Influencer Post (269 vs 174 posts). Evidence: strong (intervals do not overlap).",
+    "action": "Shift about 15-20% of TikTok posting slots from Influencer Posts (low attention and few buying signals) to Reels for the next campaign and re-measure.",
+    "metric": "Engagement index per post; buying-signal rate",
+    "priority": "Low"
+  },
+  {
+    "area": "Content",
+    "points": 7.270666666666666,
+    "title": "Facebook: lead with Eid Campaigns, keep Sale Announcement, Product Photo for conversion",
+    "evidence": "Median engagement index 1.78 for Eid Campaign (90% CI 1.50-2.09) vs 0.66 for Product Photo (48 vs 166 posts). Evidence: strong (intervals do not overlap).",
+    "action": "Use Eid Campaigns for reach, but do not drop Sale Announcement, Product Photo: they get less attention yet carry more buying-signal comments.",
+    "metric": "Engagement index per post; buying-signal rate",
+    "priority": "Low"
+  },
+  {
+    "area": "Content",
+    "points": 7,
+    "title": "Reels get attention but little buying intent",
+    "evidence": "Engagement index 1.36 (above typical) but only 39% of comments show buying signals.",
+    "action": "Add a clear call to action on Reels (price in caption, 'DM to order', shop link in bio).",
+    "metric": "Buying-signal rate",
+    "priority": "Low"
+  },
+  {
+    "area": "Content",
+    "points": 7,
+    "title": "Influencer Posts get attention but little buying intent",
+    "evidence": "Engagement index 1.07 (above typical) but only 42% of comments show buying signals.",
+    "action": "Add a clear call to action on Influencer Posts (price in caption, 'DM to order', shop link in bio).",
+    "metric": "Buying-signal rate",
+    "priority": "Low"
+  },
+  {
+    "area": "Content",
+    "points": 7,
+    "title": "Styling Videos get attention but little buying intent",
+    "evidence": "Engagement index 1.07 (above typical) but only 42% of comments show buying signals.",
+    "action": "Add a clear call to action on Styling Videos (price in caption, 'DM to order', shop link in bio).",
+    "metric": "Buying-signal rate",
+    "priority": "Low"
+  },
+  {
+    "area": "Campaign testing",
+    "points": 6,
+    "title": "Run three A/B tests next campaign",
+    "evidence": "Price in caption vs no price on Product Photos (13% of Product Photo comments just ask 'price?'); 'DM to order' / shop-link call to action vs none on Reels (Reels attract praise but fewer buying signals than Sale Announcements); Offer code in caption vs offer in image only on Sale Announcements (Discount requests are the largest buying-signal group on sale posts).",
+    "action": "To detect a 25% lift in engagement you need about 79 posts per arm (log-engagement spread 0.50); for smaller teams, run each test across 3-4 weeks and several brands/platforms.",
+    "metric": "Price-enquiry share, buying-signal rate; Buying-signal comments per 1,000 likes; Discount-request share, promo-code redemptions",
+    "priority": "Low"
+  },
+  {
+    "area": "Promotions",
+    "points": 5.75499580925493,
+    "title": "Reframe value where price pushback is high",
+    "evidence": "5% of comments say the price is too high. Strongest: Facebook (8%, 1.6x), Brand E (8%, 1.4x).",
+    "action": "Test value framing (fabric details, cost per wear, instalment or bundle pricing) against the current price-only caption.",
+    "metric": "Price-complaint share",
+    "priority": "Low"
+  },
+  {
+    "area": "Customer service",
+    "points": 5.378883056155984,
+    "title": "Filter spam and fake-giveaway comments",
+    "evidence": "4% of comments are spam/promotion, 41% of them on TikTok; 31 posts are spam-flooded.",
+    "action": "Turn on keyword filters (giveaway, follow, replica, DM for) and hide flagged comments so they do not bury real buyer questions.",
+    "metric": "Spam share of comments",
+    "priority": "Low"
+  },
+  {
+    "area": "Customer service",
+    "points": 4.368962018615731,
+    "title": "Publish delivery times and charges up front",
+    "evidence": "5% of comments ask how long delivery takes, what it costs or whether it arrives before Eid.",
+    "action": "Add delivery days by city and the cash-on-delivery option to captions and highlights.",
+    "metric": "Delivery-enquiry share",
+    "priority": "Low"
+  }
+]

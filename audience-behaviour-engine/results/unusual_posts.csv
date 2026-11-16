@@ -1,0 +1,125 @@
+post_id,brand,platform,campaign,content_type,likes,comments_count,shares,views,anomaly_type,severity,why
+P1079,Brand B,Instagram,12.12 Sale,Reel,7617,1953,,165826.0,spam_bot,26.191601707417586,"100% of sampled comments are spam or promotion (comparable posts: 2%), with 1,953 comments in total."
+P1494,Brand A,Facebook,Eid Collection,Eid Campaign,12312,3152,1687.0,,spam_bot,26.191601707417586,"100% of sampled comments are spam or promotion (comparable posts: 2%), with 3,152 comments in total."
+P2709,Brand D,TikTok,Eid Collection,Styling Video,20730,6304,4488.0,467683.0,spam_bot,26.191601707417586,"100% of sampled comments are spam or promotion (comparable posts: 2%), with 6,304 comments in total."
+P0071,Brand A,TikTok,Summer Lawn,Reel,17793,8771,6175.0,617837.0,spam_bot,24.28259283661456,"93% of sampled comments are spam or promotion (comparable posts: 2%), with 8,771 comments in total."
+P2991,Brand E,Instagram,Summer Lawn,Sale Announcement,2561,2429,71.0,68698.0,spam_bot,24.28259283661456,"93% of sampled comments are spam or promotion (comparable posts: 2%), with 2,429 comments in total."
+P2389,Brand A,Facebook,12.12 Sale,Product Photo,3975,1681,218.0,,spam_bot,24.28259283661456,"93% of sampled comments are spam or promotion (comparable posts: 2%), with 1,681 comments in total."
+P2441,Brand D,Instagram,Summer Lawn,Product Photo,1266,480,57.0,31796.0,spam_bot,24.24871130596428,"100% of sampled comments are spam or promotion (comparable posts: 2%), with 480 comments in total."
+P0650,Brand D,TikTok,Summer Lawn,Influencer Post,11918,16516,2614.0,717453.0,complaint_storm,23.42232785563533,87% of sampled comments are delivery/price complaints; comparable posts normally have about 2%.
+P0579,Brand B,Facebook,Eid Collection,Eid Campaign,2473,1329,374.0,,spam_bot,22.186746058858475,"92% of sampled comments are spam or promotion (comparable posts: 2%), with 1,329 comments in total."
+P1287,Brand D,TikTok,12.12 Sale,Reel,10726,8986,1141.0,280858.0,spam_bot,22.135943621178654,"100% of sampled comments are spam or promotion (comparable posts: 2%), with 8,986 comments in total."
+P1517,Brand B,Instagram,Summer Lawn,Sale Announcement,1241,4249,65.0,,spam_bot,22.135943621178654,"100% of sampled comments are spam or promotion (comparable posts: 2%), with 4,249 comments in total."
+P0398,Brand E,Instagram,Summer Lawn,Reel,4436,2680,698.0,144163.0,spam_bot,22.135943621178654,"100% of sampled comments are spam or promotion (comparable posts: 2%), with 2,680 comments in total."
+P2046,Brand B,Instagram,11.11 Sale,Product Photo,4525,1647,123.0,,spam_bot,22.135943621178654,"100% of sampled comments are spam or promotion (comparable posts: 2%), with 1,647 comments in total."
+P2207,Brand D,Instagram,Eid Collection,Influencer Post,3940,2489,225.0,,complaint_storm,21.83303849773132,93% of sampled comments are delivery/price complaints; comparable posts normally have about 3%.
+P0956,Brand E,TikTok,Summer Lawn,Sale Announcement,6544,10051,330.0,270870.0,complaint_storm,21.27949188144791,100% of sampled comments are delivery/price complaints; comparable posts normally have about 3%.
+P0820,Brand A,Instagram,Eid Collection,Eid Campaign,5397,4858,,,spam_bot,21.27671466949629,"85% of sampled comments are spam or promotion (comparable posts: 2%), with 4,858 comments in total."
+P0207,Brand A,Facebook,Winter Collection,Product Photo,2377,2223,267.0,76661.0,spam_bot,19.877173863915527,"90% of sampled comments are spam or promotion (comparable posts: 2%), with 2,223 comments in total."
+P2672,Brand B,Instagram,Winter Collection,Product Photo,3575,866,,52509.0,spam_bot,19.877173863915527,"90% of sampled comments are spam or promotion (comparable posts: 2%), with 866 comments in total."
+P0518,Brand B,Instagram,Eid Collection,Sale Announcement,4713,9070,,,spam_bot,19.79898987322333,"100% of sampled comments are spam or promotion (comparable posts: 2%), with 9,070 comments in total."
+P0242,Brand A,Instagram,Eid Collection,Eid Campaign,12677,3094,926.0,237356.0,spam_bot,19.73377228781874,"73% of sampled comments are spam or promotion (comparable posts: 2%), with 3,094 comments in total."
+P2085,Brand C,Facebook,Summer Lawn,Sale Announcement,2654,8178,68.0,116273.0,spam_bot,18.909068609948317,"82% of sampled comments are spam or promotion (comparable posts: 2%), with 8,178 comments in total."
+P1294,Brand E,Facebook,Summer Lawn,Sale Announcement,1683,4411,62.0,103096.0,spam_bot,18.555566224205464,"71% of sampled comments are spam or promotion (comparable posts: 2%), with 4,411 comments in total."
+P2584,Brand D,Instagram,Summer Lawn,Reel,2677,1495,,43613.0,spam_bot,16.000850317541058,"67% of sampled comments are spam or promotion (comparable posts: 2%), with 1,495 comments in total."
+P1961,Brand E,TikTok,Eid Collection,Styling Video,10349,5290,2847.0,373030.0,complaint_storm,15.583059082339211,93% of sampled comments are delivery/price complaints; comparable posts normally have about 5%.
+P1103,Brand A,Facebook,12.12 Sale,Influencer Post,8891,5549,855.0,280048.0,spam_bot,15.35963434938927,"70% of sampled comments are spam or promotion (comparable posts: 2%), with 5,549 comments in total."
+P0356,Brand E,Facebook,Eid Collection,Eid Campaign,3022,2686,507.0,,spam_bot,14.748227150462277,"75% of sampled comments are spam or promotion (comparable posts: 2%), with 2,686 comments in total."
+P2024,Brand A,Instagram,11.11 Sale,Influencer Post,14338,4135,457.0,,spam_bot,14.601763687408837,"64% of sampled comments are spam or promotion (comparable posts: 2%), with 4,135 comments in total."
+P0201,Brand E,Instagram,Eid Collection,Eid Campaign,10112,4208,655.0,,complaint_storm,13.43961498677043,100% of sampled comments are delivery/price complaints; comparable posts normally have about 7%.
+P0495,Brand E,Instagram,Summer Lawn,Styling Video,24554,2839,3550.0,389547.0,complaint_storm,11.775002044881157,100% of sampled comments are delivery/price complaints; comparable posts normally have about 6%.
+P0068,Brand E,Instagram,Summer Lawn,Reel,10081,5322,1215.0,230618.0,complaint_storm,11.079820389396922,100% of sampled comments are delivery/price complaints; comparable posts normally have about 11%.
+P1330,Brand D,TikTok,11.11 Sale,Reel,11231,1415,2054.0,469162.0,spam_bot,10.842094834863014,"50% of sampled comments are spam or promotion (comparable posts: 2%), with 1,415 comments in total."
+P1037,Brand E,Instagram,Summer Lawn,Product Photo,12996,2906,312.0,,complaint_storm,10.703257908865336,100% of sampled comments are delivery/price complaints; comparable posts normally have about 10%.
+P1139,Brand D,Facebook,Eid Collection,Reel,3881,2644,473.0,139933.0,complaint_storm,10.653808426037656,100% of sampled comments are delivery/price complaints; comparable posts normally have about 10%.
+P2816,Brand A,Instagram,Eid Collection,Product Photo,3800,1180,,,complaint_storm,10.552026567389873,90% of sampled comments are delivery/price complaints; comparable posts normally have about 7%.
+P2355,Brand D,Instagram,Winter Collection,Influencer Post,2370,989,115.0,,complaint_storm,10.500100614952016,90% of sampled comments are delivery/price complaints; comparable posts normally have about 7%.
+P2541,Brand C,Instagram,Winter Collection,Sale Announcement,2556,2409,103.0,,complaint_storm,9.516899169019588,100% of sampled comments are delivery/price complaints; comparable posts normally have about 12%.
+P1762,Brand D,Facebook,Eid Collection,Reel,4741,1737,974.0,211023.0,complaint_storm,9.285164846214942,92% of sampled comments are delivery/price complaints; comparable posts normally have about 10%.
+P0217,Brand C,Instagram,Summer Lawn,Styling Video,5178,1655,786.0,122851.0,complaint_storm,9.146606104961567,100% of sampled comments are delivery/price complaints; comparable posts normally have about 13%.
+P2350,Brand E,TikTok,12.12 Sale,Influencer Post,4732,3946,481.0,153717.0,spam_bot,9.01361765405673,"83% of sampled comments are spam or promotion (comparable posts: 9%), with 3,946 comments in total."
+P2577,Brand C,Instagram,Winter Collection,Influencer Post,3546,2508,413.0,,complaint_storm,9.005926819129781,100% of sampled comments are delivery/price complaints; comparable posts normally have about 12%.
+P0172,Brand C,TikTok,Eid Collection,Influencer Post,12257,18183,1693.0,426645.0,spam_bot,8.38797488304204,"89% of sampled comments are spam or promotion (comparable posts: 9%), with 18,183 comments in total."
+P1509,Brand D,Instagram,12.12 Sale,Influencer Post,4871,2619,,,complaint_storm,8.23245181685531,93% of sampled comments are delivery/price complaints; comparable posts normally have about 16%.
+P1296,Brand D,TikTok,12.12 Sale,Sale Announcement,3446,9395,314.0,251099.0,complaint_storm,8.146915346467537,91% of sampled comments are delivery/price complaints; comparable posts normally have about 12%.
+P1334,Brand B,Instagram,Eid Collection,Sale Announcement,35,11,0.0,,flop,7.6779864950894385,Engagement is only 0.01x the expected level for comparable Sale Announcements on Instagram.
+P1447,Brand D,Instagram,11.11 Sale,Sale Announcement,911,2607,19.0,,complaint_storm,7.645503339799402,100% of sampled comments are delivery/price complaints; comparable posts normally have about 13%.
+P0275,Brand D,TikTok,11.11 Sale,Reel,25229,2590,5943.0,876751.0,spam_bot,7.172083066320696,"38% of sampled comments are spam or promotion (comparable posts: 2%), with 2,590 comments in total."
+P0643,Brand D,Instagram,11.11 Sale,Product Photo,3363,503,68.0,,complaint_storm,7.0760851589327265,100% of sampled comments are delivery/price complaints; comparable posts normally have about 18%.
+P2926,Brand B,TikTok,12.12 Sale,Influencer Post,208,14,26.0,5301.0,flop,6.854193452217742,Engagement is only 0.02x the expected level for comparable Influencer Posts on TikTok.
+P2862,Brand C,TikTok,Summer Lawn,Reel,312,16,24.0,6564.0,flop,6.77520462690825,Engagement is only 0.02x the expected level for comparable Reels on TikTok.
+P2480,Brand E,TikTok,11.11 Sale,Reel,322,26,44.0,8389.0,flop,6.672760995989521,Engagement is only 0.02x the expected level for comparable Reels on TikTok.
+P0193,Brand A,Facebook,Summer Lawn,Product Photo,2795,991,79.0,,complaint_storm,6.640211920510382,88% of sampled comments are delivery/price complaints; comparable posts normally have about 12%.
+P1803,Brand B,Instagram,11.11 Sale,Sale Announcement,905,2666,,53788.0,complaint_storm,6.601389656734596,100% of sampled comments are delivery/price complaints; comparable posts normally have about 17%.
+P1551,Brand D,Instagram,Eid Collection,Eid Campaign,100,4,,1444.0,flop,6.52640329357526,Engagement is only 0.02x the expected level for comparable Eid Campaigns on Instagram.
+P0428,Brand E,Instagram,11.11 Sale,Reel,452750,22389,37950.0,7086107.0,viral,6.281798615441816,Engagement is 37.2x what comparable Reels on Instagram get.
+P0618,Brand B,Facebook,11.11 Sale,Influencer Post,3294,4634,714.0,210932.0,complaint_storm,6.169906069748235,100% of sampled comments are delivery/price complaints; comparable posts normally have about 22%.
+P0449,Brand B,Instagram,11.11 Sale,Product Photo,110,6,2.0,,flop,6.11931685722144,Engagement is only 0.03x the expected level for comparable Product Photos on Instagram.
+P0810,Brand D,Instagram,Eid Collection,Influencer Post,1903,487,204.0,,spam_bot,6.0693273674994295,"40% of sampled comments are spam or promotion (comparable posts: 2%), with 487 comments in total."
+P1428,Brand E,TikTok,Winter Collection,Influencer Post,6808,1478,900.0,293308.0,complaint_storm,6.0693273674994295,40% of sampled comments are delivery/price complaints; comparable posts normally have about 2%.
+P2274,Brand A,TikTok,Eid Collection,Reel,18899,1517,2816.0,545407.0,spam_bot,6.0693273674994295,"40% of sampled comments are spam or promotion (comparable posts: 2%), with 1,517 comments in total."
+P2470,Brand D,Instagram,11.11 Sale,Product Photo,68,2,2.0,1119.0,flop,5.877601744407427,Engagement is only 0.03x the expected level for comparable Product Photos on Instagram.
+P1664,Brand E,Instagram,Eid Collection,Product Photo,185408,9603,6300.0,3190855.0,viral,5.758347092078851,Engagement is 27.5x what comparable Product Photos on Instagram get.
+P2388,Brand D,Instagram,11.11 Sale,Sale Announcement,44,28,,,flop,5.60237059308877,Engagement is only 0.04x the expected level for comparable Sale Announcements on Instagram.
+P1771,Brand A,TikTok,Winter Collection,Influencer Post,365262,62715,33882.0,12801977.0,viral,5.487964765285336,Engagement is 23.5x what comparable Influencer Posts on TikTok get.
+P1887,Brand D,TikTok,Winter Collection,Reel,89272,6008,11931.0,1542261.0,spam_bot,5.4821913290861595,"33% of sampled comments are spam or promotion (comparable posts: 2%), with 6,008 comments in total."
+P2403,Brand B,TikTok,Eid Collection,Eid Campaign,16052,1364,1514.0,376609.0,spam_bot,5.4821913290861595,"33% of sampled comments are spam or promotion (comparable posts: 2%), with 1,364 comments in total."
+P1043,Brand D,Instagram,Eid Collection,Sale Announcement,72,20,,,flop,5.415303631731795,Engagement is only 0.04x the expected level for comparable Sale Announcements on Instagram.
+P0342,Brand E,Instagram,11.11 Sale,Reel,7771,3235,,177778.0,complaint_storm,5.337144953147751,82% of sampled comments are delivery/price complaints; comparable posts normally have about 19%.
+P0011,Brand C,Facebook,12.12 Sale,Influencer Post,124839,12274,13904.0,3535478.0,viral,5.2619936067557544,Engagement is 20.7x what comparable Influencer Posts on Facebook get.
+P1885,Brand A,Instagram,11.11 Sale,Reel,420,41,,13430.0,flop,5.248395360458556,Engagement is only 0.05x the expected level for comparable Reels on Instagram.
+P2636,Brand D,Instagram,Winter Collection,Reel,118,13,12.0,3335.0,flop,5.2132311979248644,Engagement is only 0.05x the expected level for comparable Reels on Instagram.
+P2947,Brand B,Facebook,Summer Lawn,Reel,58133,4445,13116.0,2045102.0,viral,5.199697631522206,Engagement is 19.9x what comparable Reels on Facebook get.
+P2094,Brand E,Facebook,Summer Lawn,Sale Announcement,87,22,2.0,2870.0,flop,5.1517482901601275,Engagement is only 0.05x the expected level for comparable Sale Announcements on Facebook.
+P2935,Brand D,TikTok,12.12 Sale,Styling Video,309451,26999,137011.0,10018017.0,viral,5.095260616147822,Engagement is 18.8x what comparable Styling Videos on TikTok get.
+P1731,Brand A,Facebook,11.11 Sale,Styling Video,78076,5643,44825.0,2434231.0,viral,5.041342671942807,Engagement is 18.2x what comparable Styling Videos on Facebook get.
+P2405,Brand C,Facebook,Summer Lawn,Influencer Post,220,51,43.0,,flop,4.981077310731494,Engagement is only 0.06x the expected level for comparable Influencer Posts on Facebook.
+P2330,Brand D,Instagram,11.11 Sale,Styling Video,139,9,22.0,2414.0,flop,4.961566255431638,Engagement is only 0.06x the expected level for comparable Styling Videos on Instagram.
+P2981,Brand E,Instagram,12.12 Sale,Product Photo,3095,570,57.0,,complaint_storm,4.883521455447309,90% of sampled comments are delivery/price complaints; comparable posts normally have about 24%.
+P0090,Brand C,Instagram,Summer Lawn,Product Photo,335,19,,,flop,4.801038727642765,Engagement is only 0.06x the expected level for comparable Product Photos on Instagram.
+P2037,Brand E,TikTok,11.11 Sale,Styling Video,489,27,199.0,15119.0,flop,4.800245876868933,Engagement is only 0.06x the expected level for comparable Styling Videos on TikTok.
+P1486,Brand B,Facebook,12.12 Sale,Influencer Post,46829,5767,6625.0,1332760.0,viral,4.796526385589654,Engagement is 15.8x what comparable Influencer Posts on Facebook get.
+P0083,Brand E,Instagram,Summer Lawn,Influencer Post,136381,12235,11042.0,,viral,4.787319738765555,Engagement is 15.7x what comparable Influencer Posts on Instagram get.
+P0962,Brand E,Facebook,11.11 Sale,Influencer Post,182,38,18.0,,flop,4.78515796169659,Engagement is only 0.06x the expected level for comparable Influencer Posts on Facebook.
+P2545,Brand A,Instagram,11.11 Sale,Product Photo,3614,552,,42697.0,complaint_storm,4.778677126654995,88% of sampled comments are delivery/price complaints; comparable posts normally have about 20%.
+P1833,Brand D,TikTok,11.11 Sale,Reel,483815,31320,69568.0,9415438.0,viral,4.70639616155585,Engagement is 15.0x what comparable Reels on TikTok get.
+P0715,Brand A,TikTok,Summer Lawn,Reel,356387,29087,54231.0,8891142.0,viral,4.684060242494979,Engagement is 14.8x what comparable Reels on TikTok get.
+P1459,Brand E,Instagram,11.11 Sale,Influencer Post,766,99,,,flop,4.683439473668272,Engagement is only 0.07x the expected level for comparable Influencer Posts on Instagram.
+P2248,Brand A,Facebook,Summer Lawn,Reel,572,52,74.0,23100.0,flop,4.621448451065401,Engagement is only 0.07x the expected level for comparable Reels on Facebook.
+P0018,Brand A,Instagram,Winter Collection,Sale Announcement,149,75,,,flop,4.597366512204156,Engagement is only 0.07x the expected level for comparable Sale Announcements on Instagram.
+P1212,Brand C,Instagram,12.12 Sale,Sale Announcement,280,128,16.0,,flop,4.387988471975541,Engagement is only 0.08x the expected level for comparable Sale Announcements on Instagram.
+P1602,Brand B,TikTok,11.11 Sale,Sale Announcement,329,164,23.0,13139.0,flop,4.378263750740403,Engagement is only 0.08x the expected level for comparable Sale Announcements on TikTok.
+P1378,Brand B,TikTok,Eid Collection,Influencer Post,611,149,130.0,22835.0,flop,4.341945564865967,Engagement is only 0.08x the expected level for comparable Influencer Posts on TikTok.
+P2671,Brand C,Facebook,Summer Lawn,Sale Announcement,39323,7260,2328.0,1503228.0,viral,4.326456518452605,Engagement is 12.1x what comparable Sale Announcements on Facebook get.
+P2813,Brand A,Instagram,Winter Collection,Reel,60951,4512,6983.0,1561534.0,viral,4.299469974550947,Engagement is 11.9x what comparable Reels on Instagram get.
+P2244,Brand D,Instagram,11.11 Sale,Sale Announcement,11583,2959,546.0,,viral,4.292816298568025,Engagement is 11.8x what comparable Sale Announcements on Instagram get.
+P2586,Brand D,Instagram,12.12 Sale,Product Photo,25771,631,661.0,,viral,4.2662530085626225,Engagement is 11.7x what comparable Product Photos on Instagram get.
+P2811,Brand C,Instagram,Summer Lawn,Reel,132622,6224,,2222108.0,viral,4.2220803831380405,Engagement is 11.4x what comparable Reels on Instagram get.
+P2969,Brand C,TikTok,11.11 Sale,Sale Announcement,453,235,17.0,23658.0,flop,4.143351005587859,Engagement is only 0.09x the expected level for comparable Sale Announcements on TikTok.
+P0246,Brand E,TikTok,Summer Lawn,Sale Announcement,31631,10898,3007.0,1649699.0,viral,4.142229741379757,Engagement is 10.8x what comparable Sale Announcements on TikTok get.
+P2154,Brand E,Facebook,Summer Lawn,Product Photo,1419,81,60.0,,complaint_storm,4.120657119632538,62% of sampled comments are delivery/price complaints; comparable posts normally have about 13%.
+P0185,Brand A,TikTok,11.11 Sale,Reel,59242,2567,2889.0,1019511.0,complaint_storm,4.113935848015219,64% of sampled comments are delivery/price complaints; comparable posts normally have about 17%.
+P1462,Brand B,Facebook,Eid Collection,Eid Campaign,38642,2432,6435.0,,viral,4.101375728941551,Engagement is 10.6x what comparable Eid Campaigns on Facebook get.
+P1698,Brand C,Facebook,Summer Lawn,Product Photo,296,19,33.0,,flop,4.098406535877535,Engagement is only 0.09x the expected level for comparable Product Photos on Facebook.
+P2828,Brand C,TikTok,12.12 Sale,Reel,21786,2099,1706.0,577274.0,complaint_storm,4.084456736015807,100% of sampled comments are delivery/price complaints; comparable posts normally have about 26%.
+P2973,Brand D,Facebook,Eid Collection,Styling Video,28489,1520,10457.0,726443.0,viral,4.033207446559403,Engagement is 10.2x what comparable Styling Videos on Facebook get.
+P0271,Brand D,TikTok,11.11 Sale,Influencer Post,213826,28426,30791.0,8884012.0,viral,3.8204718030971097,Engagement is 9.0x what comparable Influencer Posts on TikTok get.
+P2778,Brand C,Facebook,Eid Collection,Sale Announcement,26461,8562,4056.0,1784228.0,viral,3.820358015153502,Engagement is 9.0x what comparable Sale Announcements on Facebook get.
+P1610,Brand A,Instagram,11.11 Sale,Styling Video,31306,1939,12746.0,891859.0,viral,3.799175360493211,Engagement is 8.9x what comparable Styling Videos on Instagram get.
+P0471,Brand C,Instagram,Winter Collection,Styling Video,491,32,145.0,11833.0,flop,3.7911077500402035,Engagement is only 0.11x the expected level for comparable Styling Videos on Instagram.
+P1137,Brand B,Instagram,11.11 Sale,Product Photo,32119,1174,517.0,,viral,3.767061978167773,Engagement is 8.7x what comparable Product Photos on Instagram get.
+P0730,Brand D,TikTok,11.11 Sale,Reel,244037,14831,49960.0,5266723.0,viral,3.6916556159962006,Engagement is 8.4x what comparable Reels on TikTok get.
+P1856,Brand D,TikTok,Winter Collection,Influencer Post,121398,17031,29726.0,3314643.0,viral,3.652277761370698,Engagement is 8.2x what comparable Influencer Posts on TikTok get.
+P0241,Brand D,Instagram,11.11 Sale,Product Photo,13009,899,728.0,,viral,3.5864131760072464,Engagement is 7.9x what comparable Product Photos on Instagram get.
+P2199,Brand E,Instagram,11.11 Sale,Product Photo,50464,2200,2119.0,,viral,3.5671111198297965,Engagement is 7.8x what comparable Product Photos on Instagram get.
+P1595,Brand B,Instagram,Summer Lawn,Sale Announcement,17888,4768,641.0,555215.0,viral,3.515683623542303,Engagement is 7.6x what comparable Sale Announcements on Instagram get.
+P2615,Brand D,Instagram,Summer Lawn,Reel,353,57,39.0,9342.0,flop,3.4365192054304785,Engagement is only 0.14x the expected level for comparable Reels on Instagram.
+P0353,Brand A,Instagram,12.12 Sale,Product Photo,656,35,,,flop,3.382783964162552,Engagement is only 0.14x the expected level for comparable Product Photos on Instagram.
+P1757,Brand E,Instagram,12.12 Sale,Product Photo,1014,58,32.0,,flop,3.3344544416960096,Engagement is only 0.15x the expected level for comparable Product Photos on Instagram.
+P0218,Brand E,Instagram,Winter Collection,Product Photo,755,56,14.0,,flop,3.328792442318646,Engagement is only 0.15x the expected level for comparable Product Photos on Instagram.
+P0514,Brand C,Instagram,Summer Lawn,Product Photo,37048,2443,622.0,,viral,3.324206387494593,Engagement is 6.8x what comparable Product Photos on Instagram get.
+P0876,Brand E,Facebook,Summer Lawn,Reel,23958,1695,3679.0,616831.0,viral,3.312068266814793,Engagement is 6.7x what comparable Reels on Facebook get.
+P1944,Brand E,Facebook,11.11 Sale,Influencer Post,19532,3288,2967.0,603589.0,viral,3.310200583016634,Engagement is 6.7x what comparable Influencer Posts on Facebook get.
+P0701,Brand E,TikTok,11.11 Sale,Reel,94602,6441,11227.0,1989443.0,viral,3.2087377571057982,Engagement is 6.3x what comparable Reels on TikTok get.
+P0288,Brand D,Instagram,Eid Collection,Product Photo,14945,508,,,viral,3.1262914864571814,Engagement is 6.0x what comparable Product Photos on Instagram get.
+P0588,Brand B,TikTok,11.11 Sale,Sale Announcement,19422,12872,1448.0,1011714.0,viral,3.056555855123669,Engagement is 5.8x what comparable Sale Announcements on TikTok get.
